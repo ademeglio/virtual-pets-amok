@@ -22,28 +22,28 @@ You can copy your code from the previous project to use as a starter, or start f
 ## Required Tasks
 ### General
   * introduce ways to track:
-	* [ ] cage cleanliness for organic dogs
-	* [ ] shelter litter box cleanliness for organic cats
-	* [ ] oil/maintenance level for robot animals
+	* [x] cage cleanliness for organic dogs
+	* [x] shelter litter box cleanliness for organic cats
+	* [x] oil/maintenance level for robot animals
 
 ### All classes
-  * [ ] Encapsulate all instance variables.
-  * [ ] Assign appropriate visibility modifiers to methods only used internally by a class or within a class hierarchy.
+  * [x] Encapsulate all instance variables.
+  * [x] Assign appropriate visibility modifiers to methods only used internally by a class or within a class hierarchy.
 
 ### VirtualPet class and related subclasses/interfaces
 In addition to the last project’s requirements:
 
-  * [ ] create a model that allows for dogs and cats, either of which may be robotic
-  * [ ] introduce an attribute (instance variable) representing overall health that is updated as a result of other attributes moving in a negative or positive direction, influencing happiness
+  * [x] create a model that allows for dogs and cats, either of which may be robotic
+  * [x] introduce an attribute (instance variable) representing overall health that is updated as a result of other attributes moving in a negative or positive direction, influencing happiness
   * introduce methods that allow for:
-	* [ ] oiling robotic pets
-	* [ ] walking dogs, decreasing the likelihood that organic dogs will soil their cages, while increasing happiness in all dogs
+	* [x] oiling robotic pets
+	* [x] walking dogs, decreasing the likelihood that organic dogs will soil their cages, while increasing happiness in all dogs
   * do not allow:
-	* [ ] feeding/watering robotic pets
-	* [ ] oiling organic pets
+	* [x] feeding/watering robotic pets
+	* [x] oiling organic pets
   * [ ] modify the `tick` method to return a value indicating the amount of waste a pet creates, which should contribute to either (optionally, create accessor methods to retrieve these values instead):
-	* [ ] amount of waste in the litter box
-	* [ ] amount of waste in an individual dog cage
+	  * [ ] amount of waste in the litter box
+	  * [ ] amount of waste in an individual dog cage
 
 ### VirtualPetShelter class
 
@@ -53,7 +53,7 @@ In addition to the last project’s requirements:
 	* [ ] oiling/maintaining all robotic pets
 	* [ ] cleaning dog cages
 	* [ ] emptying the litterbox
- * modify existing methods to only feed/water pets that are not robotic
+  * [ ] modify existing methods to only feed/water pets that are not robotic
 
 ### VirtualPetShelterApp class
 In addition to the last project’s requirements:
@@ -72,7 +72,7 @@ In addition to the last project’s requirements:
 Here is the [rubric](https://wecancodeit.github.io/java-exercises/virtual-pets-amok/rubric.html).
 
 ## Stretch Tasks
-  * Allow for other types of pets. Are they caged? What maintenance do they require?
+  * [ ] Allow for other types of pets. Are they caged? What maintenance do they require?
   * Allow an option for giving treats to pets. What sorts of treats do different pets like?
   * introduce a `Cage` class for each dog, where cleanliness is tracked, keying these on the dog to which each is assigned (to use a `VirtualPet` as a key in a `HashMap`, you should implement `hashCode` and `equals`)
   * Herd your cats.

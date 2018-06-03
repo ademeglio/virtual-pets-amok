@@ -15,4 +15,9 @@ public class RoboPet extends VirtualPet{
 		return petRustLevel ;
 	}
 
+	// Methods
+	public void oilPet() {
+		petRustLevel --;
+		petHappiness ++;
+	}
 }

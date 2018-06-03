@@ -1,17 +1,11 @@
 package org.wecancodeit.virtual_pets_amok;
 
-public class Cat extends VirtualPet{
+public class Cat extends OrganicPet{
 
-	private static final int DEFAULT_WASTE_LEVEL = 0;
-	private int wasteLevel = DEFAULT_WASTE_LEVEL;
-
+	// Constructor
 	public Cat(String petName) {
 		super(petName);
 	}
 
-	// Getters
-	public int getWaste() {
-		return wasteLevel;
-	}
 
 }

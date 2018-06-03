@@ -9,7 +9,7 @@ public class VirtualPet {
 	// Variables
 	private String petName;
 	private int petHealth = DEFAULT_PET_HEALTH;
-	private int petHappiness = DEFAULT_PET_HAPPINESS;
+	protected int petHappiness = DEFAULT_PET_HAPPINESS;
 
 	// Constructor
 	public VirtualPet(String petName) {

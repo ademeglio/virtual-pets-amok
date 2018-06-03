@@ -1,8 +1,12 @@
 package org.wecancodeit.virtual_pets_amok;
 
+import static org.hamcrest.CoreMatchers.not;
+import static org.hamcrest.Matchers.contains;
 import static org.hamcrest.Matchers.instanceOf;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertThat;
+
+import java.util.Collection;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -59,5 +63,33 @@ public class RoboPetTest {
 		assertThat(roboDog1, instanceOf(VirtualPet.class));
 	}
 	
+	@Test
+	public void shouldRemoveRoboPet() {
+		// setup
+		RoboCat roboCat1 = new RoboCat("Bytes");
+		RoboDog roboDog1 = new RoboDog("Copper");
+		RoboCat roboCat2 = new RoboCat("Javi");
+		RoboDog roboDog2 = new RoboDog("Trixie");
+		
+		//Act
+		testPetBox.addPet(roboDog2);
+		testPetBox.addPet(roboCat2);
+		testPetBox.addPet(roboDog1);
+		testPetBox.addPet(roboCat1);
+		testPetBox.removePet(roboDog1);
+		Collection<VirtualPet> allPets = testPetBox.getAllPets();
+		// Assert
+		assertThat(allPets, not(contains(roboDog1)));
+		
+	}
 	
+	@Test
+	public void shouldDecreaseRustLevel() {
+		RoboCat roboCat1 = new RoboCat("Bytes");
+		int rustLevelStart = roboCat1.getPetRustLevel();
+		roboCat1.oilPet();
+		int rustLevelEnd = roboCat1.getPetRustLevel();
+		// Assert
+		assertEquals(rustLevelEnd, 0);
+	}
 }

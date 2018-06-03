@@ -35,12 +35,21 @@ public class OrganicDogTest {
 		//setup
 		// Act
 		testCage.addPet(testDog);
-		int wasteLevel = testDog.getWaste();
+		int wasteLevel = testDog.getWasteLevel();
 		// Assert
-		assertEquals(wasteLevel, 0);
+		assertEquals(wasteLevel, 1);
 	}
 	
-	// For Cat & Dog: Food & Thirst 
+	@Test
+	public void shouldReduceWasteAfterWalk() {
+		// setup
+		int wasteLevelStart = testDog.getWasteLevel();
+		testDog.takeForWalk();
+		int wasteLevelEnd = testDog.getWasteLevel();
+		// Assert
+		assertEquals(wasteLevelStart - 1, wasteLevelEnd);
+	}
+	
 }
 	
 	

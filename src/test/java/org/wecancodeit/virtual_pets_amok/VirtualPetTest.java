@@ -51,6 +51,8 @@ public class VirtualPetTest {
 		assertEquals(petHappy, 5);
 	}
 	
+	// ROBO TEST 1
+	
 	@Test
 	public void shouldAddRoboPet() {
 		// setup
