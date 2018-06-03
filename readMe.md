@@ -53,7 +53,7 @@ In addition to the last project’s requirements:
 In addition to the last project’s requirements:
 
   * introduce methods that allow for:
-	* [ ] oiling/maintaining all robotic pets
+	* [x] oiling/maintaining all robotic pets
 	* [ ] cleaning dog cages
 	* [ ] emptying the litterbox
   * [ ] modify existing methods to only feed/water pets that are not robotic
@@ -63,8 +63,8 @@ In addition to the last project’s requirements:
 
 * add options to:
 	* [ ] walk all dogs
-    * [ ] clean dog cages
-    * [ ] clean the shelter litterbox
+  * [ ] clean dog cages
+  * [ ] clean the shelter litterbox
 	* [ ] oil all robotic pets
 
 ## Tips
