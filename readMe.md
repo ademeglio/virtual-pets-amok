@@ -1,5 +1,8 @@
 # My Build Notes
   * Working with Siddiqa!
+[ ] 1. Add cages and litter box to the shelter
+[ ] 2. Add pets to those cages or litter box (PetBox). Need to be able to assign the pet to a particular cage or litterbox.
+
 
 # Virtual Pets AMOK!
 Oh noes! Your virtual pet shelter has become a mess!

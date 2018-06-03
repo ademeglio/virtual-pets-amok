@@ -2,6 +2,7 @@ package org.wecancodeit.virtual_pets_amok;
 
 import static org.hamcrest.CoreMatchers.not;
 import static org.hamcrest.Matchers.contains;
+import static org.hamcrest.Matchers.containsInAnyOrder;
 import static org.hamcrest.Matchers.instanceOf;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertThat;
@@ -86,10 +87,30 @@ public class RoboPetTest {
 	@Test
 	public void shouldDecreaseRustLevel() {
 		RoboCat roboCat1 = new RoboCat("Bytes");
-		int rustLevelStart = roboCat1.getPetRustLevel();
 		roboCat1.oilPet();
 		int rustLevelEnd = roboCat1.getPetRustLevel();
 		// Assert
 		assertEquals(rustLevelEnd, 0);
 	}
+	
+	@Test
+	public void shouldGeAllRobotPets() {
+		// Setup
+		Cat Cat1 = new Cat("Bytes");
+		Dog Dog1 = new Dog("Copper");
+		RoboCat roboCat2 = new RoboCat("Javi");
+		RoboDog roboDog2 = new RoboDog("Trixie");
+		// Action
+		testPetBox.addPet(roboDog2);
+		testPetBox.addPet(roboCat2);
+		testPetBox.addPet(Dog1);
+		testPetBox.addPet(Cat1);
+		
+		Collection<RoboPet> robotPets = testPetBox.getAllRobotPets();
+		
+		// Assert
+		assertThat(robotPets, not(containsInAnyOrder(Dog1, Cat1)));
+	}
+	
+
 }

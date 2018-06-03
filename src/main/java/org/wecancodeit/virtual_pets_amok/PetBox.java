@@ -1,5 +1,6 @@
 package org.wecancodeit.virtual_pets_amok;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
@@ -17,6 +18,17 @@ public class PetBox {
 
 	public Collection<VirtualPet> getAllPets() {
 		return pets.values();
+	}
+	
+	
+	public ArrayList<RoboPet> getAllRobotPets() {
+		ArrayList<RoboPet> roboPets = new ArrayList<>();
+		for(VirtualPet pet : pets.values()) {
+			if (pet instanceof RoboPet) {
+				roboPets.add((RoboPet)pet);
+			}
+		}
+		return roboPets;
 	}
 
 	public int getCleanliness() {
@@ -39,5 +51,6 @@ public class PetBox {
 	public void removePet(VirtualPet pet) {
 		pets.remove(pet.getPetName());	
 	}
+
 
 }

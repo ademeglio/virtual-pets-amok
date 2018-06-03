@@ -28,5 +28,9 @@ public class VirtualPet {
 	public int getHappiness() {
 		return petHappiness;
 	}
+	
+	public void tick() {
+		
+	}
 
 }

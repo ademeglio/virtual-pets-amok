@@ -6,6 +6,7 @@ public class RoboDog extends RoboPet implements DogInterface{
 		super(petName);
 	}
 
+	@Override
 	public void takeForWalk() {
 		petHappiness += 1; 
 	}

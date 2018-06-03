@@ -4,8 +4,4 @@ public class Cage extends PetBox{
 
 
 
-
-
-
-
 }
