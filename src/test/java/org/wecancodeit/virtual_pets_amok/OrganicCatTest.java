@@ -56,12 +56,23 @@ public class OrganicCatTest {
 	
 	@Test
 	public void shouldGetOrganicPetThirst() {
-		// Act
+		// Setup
 		petBox.addPet(organicPet);
+		// Act
 		int petThirst = organicPet.getThirstLevel();
 		// Assert
 		assertEquals(petThirst, 1);
 	}
+	
+	@Test
+	public void shouldGetOrganicPetBoredom() {
+		// Act
+		petBox.addPet(organicPet);
+		int petBoredom = organicPet.getBoredomLevel();
+		// Assert
+		assertEquals(petBoredom, 1);
+	}
+	
 	
 	// Test Cat Object
 	@Test
@@ -84,7 +95,15 @@ public class OrganicCatTest {
 		assertEquals(wasteLevel, 1);
 	}
 	
-	
+	@Test
+	public void shouldGetCatBoredomLevel() {
+		// setup
+		petBox.addPet(testCat);
+		// Act
+		int catBoredomLevel = testCat.getBoredomLevel();
+		// Assert
+		assertEquals(catBoredomLevel, 1);
+	}
 	
 	
 }

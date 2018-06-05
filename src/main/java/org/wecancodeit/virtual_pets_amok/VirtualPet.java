@@ -3,13 +3,15 @@ package org.wecancodeit.virtual_pets_amok;
 public class VirtualPet {
 
 	// Constants
+	private static final int DEFAULT_PET_BOREDOM = 1;
 	private static final int DEFAULT_PET_HEALTH = 10;
 	private static final int DEFAULT_PET_HAPPINESS = 5;
 	
 	// Variables
-	private String petName;
-	private int petHealth = DEFAULT_PET_HEALTH;
+	protected String petName;
+	protected int petHealth = DEFAULT_PET_HEALTH;
 	protected int petHappiness = DEFAULT_PET_HAPPINESS;
+	protected int petBoredom = DEFAULT_PET_BOREDOM;
 
 	// Constructor
 	public VirtualPet(String petName) {
@@ -29,8 +31,13 @@ public class VirtualPet {
 		return petHappiness;
 	}
 	
+	public int getBoredomLevel() {
+		return petBoredom;
+	}
+	
 	public void tick() {
 		
 	}
+
 
 }

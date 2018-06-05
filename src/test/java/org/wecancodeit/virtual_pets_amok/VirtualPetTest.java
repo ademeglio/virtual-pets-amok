@@ -51,6 +51,15 @@ public class VirtualPetTest {
 		assertEquals(petHappy, 5);
 	}
 	
+	@Test
+	public void shouldGetOrganicPetBoredom() {
+		// Act
+		testPetBox.addPet(testPet1);
+		int petBoredom = testPet1.getBoredomLevel();
+		// Assert
+		assertEquals(petBoredom, 1);
+	}
+	
 	// ROBO TEST 1
 	
 	@Test
