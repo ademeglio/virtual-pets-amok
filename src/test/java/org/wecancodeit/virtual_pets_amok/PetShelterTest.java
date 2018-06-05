@@ -106,4 +106,6 @@ public class PetShelterTest {
 		assertEquals(roboDog2.getPetRustLevel(), 0);
 	}
 	
+	
+	
 }

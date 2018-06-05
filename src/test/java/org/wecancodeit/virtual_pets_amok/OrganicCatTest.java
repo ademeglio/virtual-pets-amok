@@ -64,17 +64,8 @@ public class OrganicCatTest {
 		assertEquals(petThirst, 1);
 	}
 	
-	@Test
-	public void shouldGetOrganicPetBoredom() {
-		// Act
-		petBox.addPet(organicPet);
-		int petBoredom = organicPet.getBoredomLevel();
-		// Assert
-		assertEquals(petBoredom, 1);
-	}
-	
-	
-	// Test Cat Object
+
+   // Test Cat Object
 	@Test
 	public void shouldAddCatToLitterBox() {
 		// Setup

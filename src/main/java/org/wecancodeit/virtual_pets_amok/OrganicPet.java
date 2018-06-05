@@ -28,6 +28,5 @@ public class OrganicPet extends VirtualPet{
 		return thirstLevel ;
 	}
 
-
-
-}
+	
+} // End OrganicPet()

@@ -19,5 +19,12 @@ public class RoboPet extends VirtualPet{
 	public void oilPet() {
 		petRustLevel --;
 		petHappiness ++;
+		petHealth ++;
 	}
-}
+	
+	public void tick() {
+		//Decrease petHappiness over time increase rust
+		
+	}
+	
+} // End RoboPet()

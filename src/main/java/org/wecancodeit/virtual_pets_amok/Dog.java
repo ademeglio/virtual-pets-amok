@@ -14,6 +14,15 @@ public class Dog extends OrganicPet implements DogInterface{
 		petHappiness += 1; 
 	}
 
+	public void tick() {
+		//Increment Hunger and Decrease petHappiness over time
+		
+		//If Hunger reaches Max, pet dies
+		
+		//If petHappiness reaches Min, pet dies
+	
+		//If Waste reaches a max value, empty and fill the cage
+		
+	}
 
-
-}
+} // End Dog()

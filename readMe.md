@@ -3,6 +3,14 @@
 [ ] 1. Add cages and litter box to the shelter
 [ ] 2. Add pets to those cages or litter box (PetBox). Need to be able to assign the pet to a particular cage or litterbox.
 
+[ ] The tick should 
+  * increment hunger over time as well as decrease happiness. 
+  * Then as hunger subsides, thirst increases along with waste.
+  * Once waste reaches a certain level, it drops down which means the cage/litterbox is dirty. _Unless you walked the dog before you reach that level_.
+  * As play increases, thirst and tired increases.
+  * Robots don't get hungry, but they get bored and if they get bored they start to rust.
+
+[ ] petDeathI() if the pet dies, then it should be removed from the shelter.
 
 # Virtual Pets AMOK!
 Oh noes! Your virtual pet shelter has become a mess!
