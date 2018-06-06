@@ -64,7 +64,7 @@ In addition to the last project’s requirements:
 	* [x] oiling/maintaining all robotic pets
 	* [x] cleaning dog cages
 	* [x] emptying the litterbox
-  * [ ] modify existing methods to only feed/water pets that are not robotic
+  * [x] modify existing methods to only feed/water pets that are not robotic
 
 ### VirtualPetShelterApp class
 In addition to the last project’s requirements:

@@ -16,6 +16,12 @@ public class Cat extends OrganicPet implements CatsAndDogsInterface{
 		wasteLevel += 2;
 	}
 	
+	@Override
+	public void waterPet() {
+		thirstLevel -= thirstLevel;
+		wasteLevel += 2;
+	}
+	
 	public void tick(PetBox litterBox) {
 		//Increment Hunger and Decrease petHappiness over time
 		hungerLevel ++;

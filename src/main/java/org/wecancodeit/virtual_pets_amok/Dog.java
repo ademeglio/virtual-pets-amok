@@ -21,6 +21,12 @@ public class Dog extends OrganicPet implements DogInterface, CatsAndDogsInterfac
 		thirstLevel ++;
 		wasteLevel += 2;
 	}
+	
+	@Override
+	public void waterPet() {
+		thirstLevel -= thirstLevel;
+		wasteLevel += 2;
+	}
 
 	public void tick() {
 		//Increment Hunger and Decrease petHappiness over time

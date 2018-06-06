@@ -83,13 +83,16 @@ public class PetShelter {
 			organicPet.feedPet();
 		}
 	}
-//	ArrayList<RoboPet> roboPets = new ArrayList<RoboPet>();
-//	for(PetBox petBox : petBoxes.values()) {
-//		roboPets.addAll(petBox.getAllRobotPets());	
-//	}
-//	for(RoboPet pet : roboPets) {
-//		pet.oilPet();
-//	}
+
+	public void waterAllPets() {
+		ArrayList<CatsAndDogsInterface> organicPets = new ArrayList<CatsAndDogsInterface>();
+		for(PetBox petBox : petBoxes.values()) {
+			organicPets.addAll((Collection<? extends CatsAndDogsInterface>) petBox.getAllOrganicPets());
+		}
+		for (CatsAndDogsInterface organicPet : organicPets) {
+			organicPet.waterPet();
+		}
+	}
 
 
 

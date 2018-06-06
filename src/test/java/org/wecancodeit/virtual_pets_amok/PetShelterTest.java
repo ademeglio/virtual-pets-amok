@@ -203,11 +203,26 @@ public class PetShelterTest {
 		assertEquals(catHungerStart - 1, catHungerEnd);
 	}
 	
-//	@Test
-//	public void shouldWaterAllOrganicPets() {
-//		//Setup
-//		//Action
-//		//Assert
-//	}
+	@Test
+	public void shouldWaterAllOrganicPets() {
+		//Setup
+		Cat cat1 = new Cat("Bytes");
+		Dog dog1 = new Dog("Copper");
+		Cage cage1 = new Cage();
+		LitterBox litterBox = new LitterBox();
+		cage1.addPet(dog1);
+		litterBox.addPet(cat1);
+		testShelter.addToShelter(1, cage1);
+		testShelter.addToShelter(3, litterBox);
+		int dogThirstStart = dog1.getThirstLevel();
+		int catThirstStart = cat1.getThirstLevel();
+		//Action
+		testShelter.waterAllPets();
+		int dogThirstEnd = dog1.getThirstLevel();
+		int catThirstEnd = cat1.getThirstLevel();
+		//Assert
+		assertEquals(dogThirstStart - 1, dogThirstEnd);
+		assertEquals(catThirstStart - 1, catThirstEnd);
+	}
 	
 }
