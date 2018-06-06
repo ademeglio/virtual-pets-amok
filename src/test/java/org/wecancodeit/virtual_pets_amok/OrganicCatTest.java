@@ -64,6 +64,7 @@ public class OrganicCatTest {
 		assertEquals(petThirst, 1);
 	}
 	
+	
 
    // Test Cat Object
 	@Test
@@ -91,9 +92,24 @@ public class OrganicCatTest {
 		// setup
 		petBox.addPet(testCat);
 		// Act
-		int catBoredomLevel = testCat.getBoredomLevel();
+		int catBoredomLevel = testCat.getHappiness();
 		// Assert
-		assertEquals(catBoredomLevel, 1);
+		assertEquals(catBoredomLevel, 5);
+	}
+	
+	@Test
+	public void shouldEffectCatHungerHappinessThirstWhenTickIsRun() {
+		// setup
+		petBox.addPet(testCat);
+		int catHungerStart = testCat.getHungerLevel();
+		int catHappinessStart = testCat.getHappiness();
+		int catThirstStart = testCat.getThirstLevel();
+		// Act
+		testCat.tick();
+		// Assert
+		assertEquals(catHungerStart, x);
+		assertEquals(catHappinessStart, y);
+		assertEquals(catThirstStart, z);
 	}
 	
 	
