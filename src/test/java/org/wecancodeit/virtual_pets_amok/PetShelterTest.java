@@ -114,14 +114,25 @@ public class PetShelterTest {
 	@Test
 	public void shouldCleanAllDogCages() {
 		//Setup
+		Cage cage1 = new Cage();
+		Cage cage2 = new Cage();
+		testShelter.addToShelter(1, cage1);
+		testShelter.addToShelter(2, cage2);
+		cage1.makePetBoxDirty(8);
+		cage2.makePetBoxDirty(9);
 		//Action
+		testShelter.cleanAllCages();
 		//Assert
 	}
 	
 	@Test
 	public void shouldEmptyAllLitterBoxes() {
 		//Setup
+		LitterBox litterBox = new LitterBox();
+		testShelter.addToShelter(1, litterBox);
+		litterBox.makePetBoxDirty(8);
 		//Action
+		testShelter.cleanAllLitterBoxes();
 		//Assert
 	}
 	
