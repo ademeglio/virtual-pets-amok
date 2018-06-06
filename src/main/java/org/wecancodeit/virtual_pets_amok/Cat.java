@@ -1,6 +1,6 @@
 package org.wecancodeit.virtual_pets_amok;
 
-public class Cat extends OrganicPet implements CatsAndDogsInterface{
+public class Cat extends OrganicPet {
 
 	// Constructor
 	public Cat(String petName) {
@@ -13,20 +13,8 @@ public class Cat extends OrganicPet implements CatsAndDogsInterface{
 	}
 	
 	// Methods
-	@Override
-	public void feedPet() {
-		hungerLevel -= hungerLevel;
-		thirstLevel ++;
-		wasteLevel += 2;
-	}
 	
-	@Override
-	public void waterPet() {
-		thirstLevel -= thirstLevel;
-		wasteLevel += 2;
-	}
-	
-	public void tick(PetBox litterBox) {
+	public void tick() {
 		//Increment Hunger and Decrease petHappiness over time
 		hungerLevel ++;
 		thirstLevel ++;
@@ -43,7 +31,7 @@ public class Cat extends OrganicPet implements CatsAndDogsInterface{
 		//If Waste reaches a max value, empty and fill the litter box
 		if (wasteLevel >= 8) {
 			// set WasteLevel to 0 and then dirty the litter box)
-			litterBox.makePetBoxDirty(wasteLevel);
+			petBox.makePetBoxDirty(wasteLevel);
 			wasteLevel -= wasteLevel;
 		}
 		

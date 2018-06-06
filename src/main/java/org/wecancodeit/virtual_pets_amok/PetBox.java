@@ -30,6 +30,16 @@ public class PetBox {
 		}
 		return roboPets;
 	}
+	
+	public ArrayList<Dog> getAllDogs() {
+		ArrayList<Dog> dogs = new ArrayList<>();
+		for(VirtualPet pet : pets.values()) {
+			if (pet instanceof Dog) {
+				dogs.add((Dog) pet);
+			}
+		}
+		return dogs;
+	}
 
 	public ArrayList<OrganicPet> getAllOrganicPets() {
 		ArrayList<OrganicPet> organicPets = new ArrayList<>();
@@ -48,6 +58,7 @@ public class PetBox {
 	// Methods
 	public void addPet(VirtualPet pet) {
 		pets.put(pet.getPetName(), pet);
+		pet.assignBox(this);
 	}
 	
 	public void makePetBoxDirty(int wasteLevel) {
@@ -59,10 +70,9 @@ public class PetBox {
 	}
 
 	public void removePet(VirtualPet pet) {
-		pets.remove(pet.getPetName());	
+		pets.remove(pet.getPetName());
+		pet.unAssignBox();
 	}
-
-
 
 
 }  // End PetBox()

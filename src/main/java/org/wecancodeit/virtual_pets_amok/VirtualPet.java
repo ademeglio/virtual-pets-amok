@@ -11,6 +11,7 @@ public class VirtualPet {
 	protected int petHealth = DEFAULT_PET_HEALTH;
 	protected int petHappiness = DEFAULT_PET_HAPPINESS;
 	protected String petDescription;
+	protected PetBox petBox;
 
 	// Constructor
 	public VirtualPet(String petName) {
@@ -38,6 +39,18 @@ public class VirtualPet {
 	public String getPetDescription() {
 		return petDescription;
 	}
+	
+	public void assignBox(PetBox petBox) {
+		this.petBox = petBox;
+	}
+	
+	public void unAssignBox() {
+		this.petBox = null;
+	}
+	public void tick() { 
+		// To be overridden by sub classes
+	}
+	
 	
 
 } // End VirtualPet()

@@ -1,6 +1,6 @@
 package org.wecancodeit.virtual_pets_amok;
 
-public class Dog extends OrganicPet implements DogInterface, CatsAndDogsInterface{
+public class Dog extends OrganicPet implements DogInterface {
 
 	// Constructor
 	public Dog(String petName) {
@@ -18,32 +18,8 @@ public class Dog extends OrganicPet implements DogInterface, CatsAndDogsInterfac
 		wasteLevel -= wasteLevel;
 		petHappiness += 2; 
 	}
-	
-	@Override
-	public void feedPet() {
-		hungerLevel -= hungerLevel;
-		thirstLevel ++;
-		wasteLevel += 2;
-	}
-	
-	@Override
-	public void waterPet() {
-		thirstLevel -= thirstLevel;
-		wasteLevel += 2;
-	}
 
 	public void tick() {
-		//Increment Hunger and Decrease petHappiness over time
-		
-		//If Hunger reaches Max, pet dies
-		
-		//If petHappiness reaches Min, pet dies
-	
-		//If Waste reaches a max value, empty and fill the cage
-		
-	}
-
-	public void tick(PetBox petCage) {
 		//Increment Hunger and Decrease petHappiness over time
 		hungerLevel ++;
 		thirstLevel ++;
@@ -57,10 +33,10 @@ public class Dog extends OrganicPet implements DogInterface, CatsAndDogsInterfac
 		if (petHappiness <= 0) {
 			// pet dies
 		}
-		//If Waste reaches a max value, empty and fill the litter box
+		//If Waste reaches a max value, empty and fill the cage
 		if (wasteLevel >= 8) {
-			// set WasteLevel to 0 and then dirty the litter box)
-			petCage.makePetBoxDirty(wasteLevel);
+			// set WasteLevel to 0 and then dirty the cage)
+			petBox.makePetBoxDirty(wasteLevel);
 			wasteLevel -= wasteLevel;
 		}
 		

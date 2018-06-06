@@ -20,6 +20,18 @@ public class OrganicPet extends VirtualPet{
 		this.petDescription = petDescription;
 	}
 
+	public void feedPet() {
+		hungerLevel -= hungerLevel;
+		thirstLevel ++;
+		wasteLevel += 2;
+	}
+	
+
+	public void waterPet() {
+		thirstLevel -= thirstLevel;
+		wasteLevel += 2;
+	}
+
 	// Getters
 	public int getWasteLevel() {
 		return wasteLevel ;

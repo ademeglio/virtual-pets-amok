@@ -75,22 +75,43 @@ public class PetShelter {
 	}
 
 	public void feedAllPets() {
-		ArrayList<CatsAndDogsInterface> organicPets = new ArrayList<CatsAndDogsInterface>();
+		ArrayList<OrganicPet> organicPets = new ArrayList<OrganicPet>();
 		for(PetBox petBox : petBoxes.values()) {
-			organicPets.addAll((Collection<? extends CatsAndDogsInterface>) petBox.getAllOrganicPets());
+			organicPets.addAll( petBox.getAllOrganicPets());
 		}
-		for (CatsAndDogsInterface organicPet : organicPets) {
+		for (OrganicPet organicPet : organicPets) {
 			organicPet.feedPet();
 		}
 	}
 
 	public void waterAllPets() {
-		ArrayList<CatsAndDogsInterface> organicPets = new ArrayList<CatsAndDogsInterface>();
+		ArrayList<OrganicPet> organicPets = new ArrayList<OrganicPet>();
 		for(PetBox petBox : petBoxes.values()) {
-			organicPets.addAll((Collection<? extends CatsAndDogsInterface>) petBox.getAllOrganicPets());
+			organicPets.addAll(petBox.getAllOrganicPets());
 		}
-		for (CatsAndDogsInterface organicPet : organicPets) {
+		for (OrganicPet organicPet : organicPets) {
 			organicPet.waterPet();
+		}
+	}
+
+	public void walkAllDogs() {
+		ArrayList<Dog> dogs = new ArrayList<Dog>();
+		for (PetBox petBox : petBoxes.values()) {
+			dogs.addAll(petBox.getAllDogs());
+		}
+		for (Dog dog : dogs) {
+			dog.takeForWalk();
+		}
+		
+	}
+
+	public void runAllTicks() {
+		ArrayList<VirtualPet> pets = new ArrayList<VirtualPet>();
+		for (PetBox petBox : petBoxes.values()) {
+			pets.addAll(petBox.getAllPets());
+		}
+		for (VirtualPet pet : pets) {
+			pet.tick();
 		}
 	}
 

@@ -222,14 +222,63 @@ public class PetShelterTest {
 		assertEquals(catThirstStart - 1, catThirstEnd);
 	}
 	
-	// TODO
 	@Test
 	public void shouldWalkAllDogs() {
-		
+		Cat cat1 = new Cat("Bytes");
+		Dog dog1 = new Dog("Copper");
+		Dog dog2 = new Dog("Benji");
+		Cage cage1 = new Cage();
+		Cage cage2 = new Cage();
+		LitterBox litterBox = new LitterBox();
+		cage1.addPet(dog1);
+		cage2.addPet(dog2);
+		litterBox.addPet(cat1);
+		testShelter.addToShelter(1, cage1);
+		testShelter.addToShelter(2, cage2);
+		testShelter.addToShelter(3, litterBox);
+		int dogWaste1Start = dog1.getWasteLevel();
+		int dogWaste2Start = dog2.getWasteLevel();
+		int catWasteStart = cat1.getWasteLevel();
+		//Action
+		testShelter.walkAllDogs();
+		//Assert
+		assertEquals(dogWaste1Start - 1, 0);
+		assertEquals(dogWaste2Start - 1, 0);
+		assertEquals(catWasteStart, 1);
 	}
 	
+	// TODO
 	@Test
 	public void shouldRunAllPetTicks() {
-		
+		// Setup
+		Cat cat1 = new Cat("Bytes");
+		Dog dog1 = new Dog("Copper");
+		RoboCat roboCat2 = new RoboCat("Javi");
+		RoboDog roboDog2 = new RoboDog("Trixie");
+		Cage cage1 = new Cage();
+		Cage cage2 = new Cage();
+		LitterBox litterBox = new LitterBox();
+		cage1.addPet(roboDog2);
+		cage2.addPet(dog1);
+		litterBox.addPet(roboCat2);
+		litterBox.addPet(cat1);
+		testShelter.addToShelter(1, cage1);
+		testShelter.addToShelter(2, cage2);
+		testShelter.addToShelter(3, litterBox);
+		// Action
+		int catStartThirst = cat1.getThirstLevel();
+		int dogStartHunger = dog1.getHungerLevel();
+		int roboCatStartHappiness = roboCat2.getHappiness();
+		int roboDogStartRustLevel = roboDog2.getPetRustLevel();
+		testShelter.runAllTicks();
+		int catEndThirst = cat1.getThirstLevel();
+		int dogEndHunger = dog1.getHungerLevel();
+		int roboCatEndHappiness = roboCat2.getHappiness();
+		int roboDogEndRustLevel = roboDog2.getPetRustLevel();
+		// Assert
+		assertEquals(catStartThirst + 1, catEndThirst);
+		assertEquals(dogStartHunger + 1, dogEndHunger);
+		assertEquals(roboCatStartHappiness - 1, roboCatEndHappiness);
+		assertEquals(roboDogStartRustLevel + 1, roboDogEndRustLevel);
 	}
 }
