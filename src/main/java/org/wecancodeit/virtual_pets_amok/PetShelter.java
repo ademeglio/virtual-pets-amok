@@ -42,6 +42,29 @@ public class PetShelter {
 		}
 	}
 
+	public void cleanAllCages() {
+		ArrayList<Cage> cages = new ArrayList<Cage>();
+		for(PetBox petBox : petBoxes.values()) {
+			if(petBox instanceof Cage) {
+				cages.add((Cage) petBox);
+			}
+		}
+		for(Cage cage : cages) {
+			cage.scrubPetBox();
+		}
+	}
+
+	public void cleanAllLitterBoxes() {
+		ArrayList<LitterBox> litterBoxes = new ArrayList<LitterBox>();
+		for(PetBox petBox : petBoxes.values()) {
+			if(petBox instanceof LitterBox) {
+				litterBoxes.add((LitterBox) petBox);
+			}
+		}
+		for (LitterBox litterBox : litterBoxes) {
+			litterBox.scrubPetBox();
+		}
+	}
 
 
 } // End PetShelter()

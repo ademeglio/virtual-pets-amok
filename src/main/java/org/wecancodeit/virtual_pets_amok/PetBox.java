@@ -45,7 +45,7 @@ public class PetBox {
 	}
 	
 	public void scrubPetBox() {
-		dirtLevel --;	
+		dirtLevel -= dirtLevel;	
 	}
 
 	public void removePet(VirtualPet pet) {

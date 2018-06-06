@@ -116,37 +116,59 @@ public class PetShelterTest {
 		//Setup
 		Cage cage1 = new Cage();
 		Cage cage2 = new Cage();
+		LitterBox litterBox = new LitterBox();
 		testShelter.addToShelter(1, cage1);
 		testShelter.addToShelter(2, cage2);
+		testShelter.addToShelter(3, litterBox);
 		cage1.makePetBoxDirty(8);
 		cage2.makePetBoxDirty(9);
+		litterBox.makePetBoxDirty(13);
 		//Action
 		testShelter.cleanAllCages();
+		int dirtLevel1 = cage1.getCleanliness();
+		int dirtLevel2 = cage2.getCleanliness();
+		int dirtLevel3 = litterBox.getCleanliness();
 		//Assert
+		assertEquals(dirtLevel1, 0);
+		assertEquals(dirtLevel2, 0);
+		assertEquals(dirtLevel3, 13);
 	}
 	
 	@Test
 	public void shouldEmptyAllLitterBoxes() {
 		//Setup
+		Cage cage1 = new Cage();
+		Cage cage2 = new Cage();
 		LitterBox litterBox = new LitterBox();
-		testShelter.addToShelter(1, litterBox);
-		litterBox.makePetBoxDirty(8);
+		testShelter.addToShelter(1, cage1);
+		testShelter.addToShelter(2, cage2);
+		testShelter.addToShelter(3, litterBox);
+		cage1.makePetBoxDirty(8);
+		cage2.makePetBoxDirty(9);
+		litterBox.makePetBoxDirty(13);
 		//Action
 		testShelter.cleanAllLitterBoxes();
+		int dirtLevel1 = cage1.getCleanliness();
+		int dirtLevel2 = cage2.getCleanliness();
+		int dirtLevel3 = litterBox.getCleanliness();
 		//Assert
+		assertEquals(dirtLevel1, 8);
+		assertEquals(dirtLevel2, 9);
+		assertEquals(dirtLevel3, 0);
 	}
 	
-	@Test
-	public void shouldFeedAllOrganicPets() {
-		//Setup
-		//Action
-		//Assert
-	}
+//	@Test
+//	public void shouldFeedAllOrganicPets() {
+//		//Setup
+//		//Action
+//		//Assert
+//	}
+//	
+//	@Test
+//	public void shouldWaterAllOrganicPets() {
+//		//Setup
+//		//Action
+//		//Assert
+//	}
 	
-	@Test
-	public void shouldWaterAllOrganicPets() {
-		//Setup
-		//Action
-		//Assert
-	}
 }
