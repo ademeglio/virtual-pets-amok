@@ -10,7 +10,7 @@
   * As play increases, thirst and tired increases.
   * Robots don't get hungry, but they get bored and if they get bored they start to rust.
 
-[ ] petDeathI() if the pet dies, then it should be removed from the shelter.
+[ ] petDeathI() if the pet dies, then it should be removed from the cage. You would have to be able to list a cage as empty or remove it from the shelter.
 
 # Virtual Pets AMOK!
 Oh noes! Your virtual pet shelter has become a mess!
@@ -52,9 +52,9 @@ In addition to the last project’s requirements:
   * do not allow:
 	* [x] feeding/watering robotic pets
 	* [x] oiling organic pets
-  * [ ] modify the `tick` method to return a value indicating the amount of waste a pet creates, which should contribute to either (optionally, create accessor methods to retrieve these values instead):
-	  * [ ] amount of waste in the litter box
-	  * [ ] amount of waste in an individual dog cage
+  * [x] modify the `tick` method to return a value indicating the amount of waste a pet creates, which should contribute to either (optionally, create accessor methods to retrieve these values instead):
+	  * [x] amount of waste in the litter box
+	  * [x] amount of waste in an individual dog cage
 
 ### VirtualPetShelter class
 
