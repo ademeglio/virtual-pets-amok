@@ -105,10 +105,7 @@ public class PetShelterTest {
 		// Assert
 		assertEquals(roboDog2.getPetRustLevel(), 0);
 	}
-	
-// TODO Feed all organic Pets
-// TODO Water all organic pets
-	
+		
 	@Test
 	public void shouldCleanAllDogCages() {
 		//Setup
@@ -154,7 +151,7 @@ public class PetShelterTest {
 		assertEquals(dirtLevel2, 9);
 		assertEquals(dirtLevel3, 0);
 	}
-// TODO	
+	
 	@Test
 	public void shouldGetAllOrganicPets() {
 		// Setup
@@ -225,4 +222,14 @@ public class PetShelterTest {
 		assertEquals(catThirstStart - 1, catThirstEnd);
 	}
 	
+	// TODO
+	@Test
+	public void shouldWalkAllDogs() {
+		
+	}
+	
+	@Test
+	public void shouldRunAllPetTicks() {
+		
+	}
 }

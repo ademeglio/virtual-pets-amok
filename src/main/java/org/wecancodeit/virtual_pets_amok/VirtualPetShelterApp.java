@@ -62,9 +62,21 @@ public class VirtualPetShelterApp {
 				+ "\nthe animals happy by feeding, walking (where appropriate!),"
 				+ "\nplaying with them and keeping their cages and litter box tidy"
 				
-				+ "\n\nLet me introduce you to our pets...");
+				+ "\n\nLet me introduce you to our pets...\n");
+		
+//		Game Loop
+		while (true) {
+			// Pet Status
+			
+			// Menu
+			
+			// Tick
+			// TODO : Create a petShelter Tick method that runs each pets tick.
+		}  // End Game Loop
 		
 
-	}
+	} // End Main
+	
+	
 
-}
+} // End VirtualPetShelterApp()
