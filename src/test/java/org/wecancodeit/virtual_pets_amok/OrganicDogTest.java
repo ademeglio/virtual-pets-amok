@@ -50,6 +50,21 @@ public class OrganicDogTest {
 		assertEquals(wasteLevelStart - 1, wasteLevelEnd);
 	}
 	
+	@Test
+	public void shouldEffectDogHungerHappinessThirstWhenTickIsRun() {
+		// setup
+		testCage.addPet(testDog);
+		int dogHungerStart = testDog.getHungerLevel();
+		int dogHappinessStart = testDog.getHappiness();
+		int dogThirstStart = testDog.getThirstLevel();
+		// Act
+		testDog.tick(testCage);
+		// Assert
+		assertEquals(dogHungerStart + 1, 2);
+		assertEquals(dogHappinessStart -1, 4);
+		assertEquals(dogThirstStart + 1, 2);
+	}
+	
 }
 	
 	
