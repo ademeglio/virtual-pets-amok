@@ -23,6 +23,14 @@ public class PetShelter {
 		return roboPets;
 	}
 	
+	public ArrayList<OrganicPet> getAllOrganicPets() {
+		ArrayList<OrganicPet> organicPets = new ArrayList<OrganicPet>();
+		for(PetBox petBox : petBoxes.values()) {
+			organicPets.addAll(petBox.getAllOrganicPets());
+		}
+		return organicPets;
+	}
+	
 	// Methods
 	public void addToShelter(int cageNum, PetBox petBox) {
 		petBoxes.put(cageNum, petBox);
@@ -67,9 +75,22 @@ public class PetShelter {
 	}
 
 	public void feedAllPets() {
-		// TODO Auto-generated method stub
-		
+		ArrayList<CatsAndDogsInterface> organicPets = new ArrayList<CatsAndDogsInterface>();
+		for(PetBox petBox : petBoxes.values()) {
+			organicPets.addAll((Collection<? extends CatsAndDogsInterface>) petBox.getAllOrganicPets());
+		}
+		for (CatsAndDogsInterface organicPet : organicPets) {
+			organicPet.feedPet();
+		}
 	}
+//	ArrayList<RoboPet> roboPets = new ArrayList<RoboPet>();
+//	for(PetBox petBox : petBoxes.values()) {
+//		roboPets.addAll(petBox.getAllRobotPets());	
+//	}
+//	for(RoboPet pet : roboPets) {
+//		pet.oilPet();
+//	}
+
 
 
 } // End PetShelter()

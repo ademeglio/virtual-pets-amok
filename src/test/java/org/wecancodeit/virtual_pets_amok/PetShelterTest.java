@@ -106,8 +106,6 @@ public class PetShelterTest {
 		assertEquals(roboDog2.getPetRustLevel(), 0);
 	}
 	
-// TODO Clean All dog cages
-// TODO Empty LitterBox
 // TODO Feed all organic Pets
 // TODO Water all organic pets
 	
@@ -155,6 +153,32 @@ public class PetShelterTest {
 		assertEquals(dirtLevel1, 8);
 		assertEquals(dirtLevel2, 9);
 		assertEquals(dirtLevel3, 0);
+	}
+// TODO	
+	@Test
+	public void shouldGetAllOrganicPets() {
+		// Setup
+		Cat cat1 = new Cat("Bytes");
+		Dog dog1 = new Dog("Copper");
+		RoboCat roboCat2 = new RoboCat("Javi");
+		RoboDog roboDog2 = new RoboDog("Trixie");
+		Cage cage1 = new Cage();
+		Cage cage2 = new Cage();
+		LitterBox litterBox = new LitterBox();
+		
+		//Act
+		cage1.addPet(dog1);
+		cage2.addPet(roboDog2);
+		litterBox.addPet(cat1);
+		litterBox.addPet(roboCat2);
+		testShelter.addToShelter(1, cage1);
+		testShelter.addToShelter(2, cage2);
+		testShelter.addToShelter(3, litterBox);
+		Collection<OrganicPet> organicPets = testShelter.getAllOrganicPets();
+		
+		// Assert
+		assertThat(organicPets, containsInAnyOrder(dog1, cat1));
+		assertThat(organicPets, not(containsInAnyOrder(roboDog2, roboCat2)));
 	}
 	
 	@Test

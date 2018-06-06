@@ -1,12 +1,21 @@
 package org.wecancodeit.virtual_pets_amok;
 
-public class Cat extends OrganicPet{
+public class Cat extends OrganicPet implements CatsAndDogsInterface{
 
 	// Constructor
 	public Cat(String petName) {
 		super(petName);
 	}
 
+	
+	// Methods
+	@Override
+	public void feedPet() {
+		hungerLevel -= hungerLevel;
+		thirstLevel ++;
+		wasteLevel += 2;
+	}
+	
 	public void tick(PetBox litterBox) {
 		//Increment Hunger and Decrease petHappiness over time
 		hungerLevel ++;

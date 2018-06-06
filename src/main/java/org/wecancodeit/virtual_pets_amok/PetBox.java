@@ -25,12 +25,22 @@ public class PetBox {
 		ArrayList<RoboPet> roboPets = new ArrayList<>();
 		for(VirtualPet pet : pets.values()) {
 			if (pet instanceof RoboPet) {
-				roboPets.add((RoboPet)pet);
+				roboPets.add((RoboPet) pet);
 			}
 		}
 		return roboPets;
 	}
 
+	public ArrayList<OrganicPet> getAllOrganicPets() {
+		ArrayList<OrganicPet> organicPets = new ArrayList<>();
+		for(VirtualPet pet : pets.values()) {
+			if (pet instanceof OrganicPet) {
+				organicPets.add((OrganicPet) pet);
+			}
+		}
+		return organicPets;
+	}
+	
 	public int getCleanliness() {
 		return dirtLevel ;
 	}
@@ -51,6 +61,8 @@ public class PetBox {
 	public void removePet(VirtualPet pet) {
 		pets.remove(pet.getPetName());	
 	}
+
+
 
 
 }  // End PetBox()

@@ -1,6 +1,6 @@
 package org.wecancodeit.virtual_pets_amok;
 
-public class Dog extends OrganicPet implements DogInterface{
+public class Dog extends OrganicPet implements DogInterface, CatsAndDogsInterface{
 
 	
 	
@@ -8,10 +8,18 @@ public class Dog extends OrganicPet implements DogInterface{
 		super(petName);
 	}
 
+	// Methods
 	@Override
 	public void takeForWalk() {
 		wasteLevel -= wasteLevel;
 		petHappiness += 2; 
+	}
+	
+	@Override
+	public void feedPet() {
+		hungerLevel -= hungerLevel;
+		thirstLevel ++;
+		wasteLevel += 2;
 	}
 
 	public void tick() {
