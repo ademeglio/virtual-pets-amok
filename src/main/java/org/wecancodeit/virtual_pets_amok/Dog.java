@@ -31,11 +31,11 @@ public class Dog extends OrganicPet implements DogInterface{
 		thirstLevel ++;
 		petHappiness --;
 		
-		//If Hunger reaches Max, pet dies
+		//If Hunger reaches max, pet dies
 		if (hungerLevel >= 10) {
 			// pet dies
 		}
-		//If petHappiness reaches Min, pet dies
+		//If petHappiness reaches min, pet dies
 		if (petHappiness <= 0) {
 			// pet dies
 		}

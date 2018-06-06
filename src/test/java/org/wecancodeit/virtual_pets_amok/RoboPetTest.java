@@ -112,5 +112,20 @@ public class RoboPetTest {
 		assertThat(robotPets, not(containsInAnyOrder(Dog1, Cat1)));
 	}
 	
+	@Test
+	public void shouldEffectRobotHealthHappinessRustWhenTickIsRun() {
+		// Setup
+		RoboCat roboCat = new RoboCat("Javi");
+		testPetBox.addPet(roboCat);
+		int catHappinessStart = roboCat.getHappiness();
+		int catRustStart = roboCat.getPetRustLevel();
+		int catHealthStart = roboCat.getHealth();
+		// Act
+		roboCat.tick();
+		// Assert
+		assertEquals(catHappinessStart -1, 4);
+		assertEquals(catRustStart + 1, 2);
+		assertEquals(catHealthStart -1, 9);
+	}
 
 }

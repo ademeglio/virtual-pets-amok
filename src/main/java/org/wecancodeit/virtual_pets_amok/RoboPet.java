@@ -23,7 +23,20 @@ public class RoboPet extends VirtualPet{
 	}
 	
 	public void tick() {
-		//Decrease petHappiness over time increase rust
+		// Decrease petHappiness over time increase rust
+		petHappiness --;
+		petRustLevel ++;
+		petHealth --;
+		
+		// If rust level reaches max, pet dies
+		if (petRustLevel >= 10) {
+			// pet dies
+		}
+		
+		// If petHappiness reaches min, pet dies
+		if (petHappiness <= 0) {
+			// pet dies			
+		}
 		
 	}
 	
