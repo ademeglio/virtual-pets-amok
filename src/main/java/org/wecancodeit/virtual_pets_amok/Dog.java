@@ -10,8 +10,8 @@ public class Dog extends OrganicPet implements DogInterface{
 
 	@Override
 	public void takeForWalk() {
-		wasteLevel -= 1;
-		petHappiness += 1; 
+		wasteLevel -= wasteLevel;
+		petHappiness += 2; 
 	}
 
 	public void tick() {
@@ -47,5 +47,6 @@ public class Dog extends OrganicPet implements DogInterface{
 		}
 		
 	}
+	
 
 } // End Dog()

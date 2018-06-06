@@ -66,5 +66,10 @@ public class PetShelter {
 		}
 	}
 
+	public void feedAllPets() {
+		// TODO Auto-generated method stub
+		
+	}
+
 
 } // End PetShelter()

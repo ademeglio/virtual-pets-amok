@@ -70,8 +70,8 @@ public class PetShelterTest {
 	@Test
 	public void shouldGetAllRoboPets() {
 		// Setup
-		Cat Cat1 = new Cat("Bytes");
-		Dog Dog1 = new Dog("Copper");
+		Cat cat1 = new Cat("Bytes");
+		Dog dog1 = new Dog("Copper");
 		RoboCat roboCat2 = new RoboCat("Javi");
 		RoboDog roboDog2 = new RoboDog("Trixie");
 		Cage cage1 = new Cage();
@@ -79,9 +79,9 @@ public class PetShelterTest {
 		LitterBox litterBox = new LitterBox();
 		
 		//Act
-		cage1.addPet(Dog1);
+		cage1.addPet(dog1);
 		cage2.addPet(roboDog2);
-		litterBox.addPet(Cat1);
+		litterBox.addPet(cat1);
 		litterBox.addPet(roboCat2);
 		testShelter.addToShelter(1, cage1);
 		testShelter.addToShelter(2, cage2);
@@ -90,7 +90,7 @@ public class PetShelterTest {
 		
 		// Assert
 		assertThat(roboPets, containsInAnyOrder(roboDog2, roboCat2));
-		assertThat(roboPets, not(containsInAnyOrder(Dog1, Cat1)));
+		assertThat(roboPets, not(containsInAnyOrder(dog1, cat1)));
 	}
 	
 	@Test
@@ -157,13 +157,28 @@ public class PetShelterTest {
 		assertEquals(dirtLevel3, 0);
 	}
 	
-//	@Test
-//	public void shouldFeedAllOrganicPets() {
-//		//Setup
-//		//Action
-//		//Assert
-//	}
-//	
+	@Test
+	public void shouldFeedAllOrganicPets() {
+		//Setup
+		Cat cat1 = new Cat("Bytes");
+		Dog dog1 = new Dog("Copper");
+		Cage cage1 = new Cage();
+		LitterBox litterBox = new LitterBox();
+		cage1.addPet(dog1);
+		litterBox.addPet(cat1);
+		testShelter.addToShelter(1, cage1);
+		testShelter.addToShelter(3, litterBox);
+		int dogHungerStart = dog1.getHungerLevel();
+		int catHungerStart = cat1.getHungerLevel();
+		//Action
+		testShelter.feedAllPets();
+		int dogHungerEnd = dog1.getHungerLevel();
+		int catHungerEnd = cat1.getHungerLevel();
+		//Assert
+		assertEquals(dogHungerStart - 1, dogHungerEnd);
+		assertEquals(catHungerStart - 1, catHungerEnd);
+	}
+	
 //	@Test
 //	public void shouldWaterAllOrganicPets() {
 //		//Setup
