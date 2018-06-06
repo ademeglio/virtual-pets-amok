@@ -10,6 +10,11 @@ public class RoboPet extends VirtualPet{
 		super(petName);
 	}
 
+	public RoboPet(String petName, String petDescription) {
+		super(petName);
+		this.petDescription = petDescription;
+	}
+	
 	// Getters
 	public int getPetRustLevel() {
 		return petRustLevel ;

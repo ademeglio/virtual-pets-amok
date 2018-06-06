@@ -14,6 +14,11 @@ public class OrganicPet extends VirtualPet{
 	public OrganicPet(String petName) {
 		super(petName);
 	}
+	
+	public OrganicPet(String petName, String petDescription) {
+		super(petName);
+		this.petDescription = petDescription;
+	}
 
 	// Getters
 	public int getWasteLevel() {

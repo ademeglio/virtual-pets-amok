@@ -10,10 +10,16 @@ public class VirtualPet {
 	protected String petName;
 	protected int petHealth = DEFAULT_PET_HEALTH;
 	protected int petHappiness = DEFAULT_PET_HAPPINESS;
+	protected String petDescription;
 
 	// Constructor
 	public VirtualPet(String petName) {
 		this.petName = petName;
+	}
+	
+	public VirtualPet(String petName, String petDescription) {
+		this.petName = petName;
+		this.petDescription = petDescription;
 	}
 	
 	// Getters
@@ -27,6 +33,10 @@ public class VirtualPet {
 
 	public int getHappiness() {
 		return petHappiness;
+	}
+	
+	public String getPetDescription() {
+		return petDescription;
 	}
 	
 

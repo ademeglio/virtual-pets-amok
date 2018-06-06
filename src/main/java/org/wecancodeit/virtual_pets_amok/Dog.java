@@ -2,12 +2,16 @@ package org.wecancodeit.virtual_pets_amok;
 
 public class Dog extends OrganicPet implements DogInterface, CatsAndDogsInterface{
 
-	
-	
+	// Constructor
 	public Dog(String petName) {
 		super(petName);
 	}
 
+	public Dog(String petName, String petDescription) {
+		super(petName);
+		this.petDescription = petDescription;
+	}
+	
 	// Methods
 	@Override
 	public void takeForWalk() {

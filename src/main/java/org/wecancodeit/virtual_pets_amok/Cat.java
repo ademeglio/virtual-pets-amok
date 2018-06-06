@@ -7,6 +7,10 @@ public class Cat extends OrganicPet implements CatsAndDogsInterface{
 		super(petName);
 	}
 
+	public Cat(String petName, String petDescription) {
+		super(petName);
+		this.petDescription = petDescription;
+	}
 	
 	// Methods
 	@Override
