@@ -106,6 +106,36 @@ public class PetShelterTest {
 		assertEquals(roboDog2.getPetRustLevel(), 0);
 	}
 	
+// TODO Clean All dog cages
+// TODO Empty LitterBox
+// TODO Feed all organic Pets
+// TODO Water all organic pets
 	
+	@Test
+	public void shouldCleanAllDogCages() {
+		//Setup
+		//Action
+		//Assert
+	}
 	
+	@Test
+	public void shouldEmptyAllLitterBoxes() {
+		//Setup
+		//Action
+		//Assert
+	}
+	
+	@Test
+	public void shouldFeedAllOrganicPets() {
+		//Setup
+		//Action
+		//Assert
+	}
+	
+	@Test
+	public void shouldWaterAllOrganicPets() {
+		//Setup
+		//Action
+		//Assert
+	}
 }
