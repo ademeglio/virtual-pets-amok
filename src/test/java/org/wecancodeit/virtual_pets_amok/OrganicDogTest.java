@@ -16,7 +16,7 @@ public class OrganicDogTest {
 	
 	@Before
 	public void setUp() {
-		testCage = new Cage();
+		testCage = new Cage(1);
 		testDog = new Dog("Rover");
 	}
 		

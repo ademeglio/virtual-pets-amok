@@ -280,4 +280,27 @@ public class PetShelterTest {
 		assertEquals(roboCatStartHappiness - 1, roboCatEndHappiness);
 		assertEquals(roboDogStartRustLevel + 1, roboDogEndRustLevel);
 	}
+	
+	@Test
+	public void shouldCleanSpecificCage() {
+		//Setup
+		Cage cage1 = new Cage(1);
+		Cage cage2 = new Cage(2);
+		LitterBox litterBox = new LitterBox(3);
+		testShelter.addToShelter(1, cage1);
+		testShelter.addToShelter(2, cage2);
+		testShelter.addToShelter(3, litterBox);
+		cage1.makePetBoxDirty(8);
+		cage2.makePetBoxDirty(9);
+		litterBox.makePetBoxDirty(13);
+		//Action
+		testShelter.cleanCage("1");
+		int dirtLevel1 = cage1.getCleanliness();
+		int dirtLevel2 = cage2.getCleanliness();
+		int dirtLevel3 = litterBox.getCleanliness();
+		//Assert
+		assertEquals(dirtLevel1, 0);
+		assertEquals(dirtLevel2, 9);
+		assertEquals(dirtLevel3, 13);
+	}
 }

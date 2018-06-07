@@ -19,10 +19,10 @@ public class OrganicCatTest {
 	@Before
 	public void setUp() {
 		
-		testLitterBox = new LitterBox();
+		testLitterBox = new LitterBox(1);
 		testCat = new Cat("Fluffy");
 		organicPet = new OrganicPet("Rock");
-		petBox = new PetBox();
+		petBox = new PetBox(1);
 	}
 	
 	// Test OrganicPet Object

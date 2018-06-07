@@ -188,6 +188,11 @@ public class PetShelter {
 		System.out.println("---------------------------------------------------------------");
 	}
 
+	public void cleanCage(String cageID) {
+		PetBox cleanCage = petBoxes.get(cageID);
+		cleanCage.scrubPetBox();
+	}
+
 
 
 

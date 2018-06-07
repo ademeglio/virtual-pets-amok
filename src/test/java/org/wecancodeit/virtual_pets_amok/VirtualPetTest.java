@@ -12,7 +12,7 @@ public class VirtualPetTest {
 	
 	@Before
 	public void setUp() {
-		testPetBox = new PetBox();
+		testPetBox = new PetBox(1);
 		testPet1 = new VirtualPet("Bob");
 	}
 	

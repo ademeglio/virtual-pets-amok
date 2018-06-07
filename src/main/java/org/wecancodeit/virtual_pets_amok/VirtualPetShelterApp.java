@@ -38,10 +38,10 @@ public class VirtualPetShelterApp {
 		RoboCat roboCat1 = new RoboCat("Titan", "is so shiny!");
 		
 		// Add cages/litter box(es) to shelter
-		Cage cage1 = new Cage();
-		Cage cage2 = new Cage();
-		Cage cage3 = new Cage();
-		LitterBox litterBox = new LitterBox();
+		Cage cage1 = new Cage(1);
+		Cage cage2 = new Cage(2);
+		Cage cage3 = new Cage(3);
+		LitterBox litterBox = new LitterBox(4);
 		
 		// Assign the pets to cages or litter box
 		cage1.addPet(dog1);
@@ -52,10 +52,10 @@ public class VirtualPetShelterApp {
 		litterBox.addPet(roboCat1);
 		
 		// Add cages to shelter		
-		petShelter.addToShelter(1, cage1);
-		petShelter.addToShelter(2, cage2);
-		petShelter.addToShelter(3, cage3);
-		petShelter.addToShelter(4, litterBox);
+		petShelter.addToShelter(cage1.getBoxID(), cage1);
+		petShelter.addToShelter(cage2.getBoxID(), cage2);
+		petShelter.addToShelter(cage3.getBoxID(), cage3);
+		petShelter.addToShelter(litterBox.getBoxID(), litterBox);
 		
 		Collection<VirtualPet> petCollection = petShelter.getAllPets();
 		
@@ -127,7 +127,16 @@ public class VirtualPetShelterApp {
 			case "5" : // Clean the dog cages
 				Collection<Dog> dogs = petShelter.getAllShelterDogs();
 				for (Dog dog : dogs) {
-					System.out.println(dog.getPetName() + "Cage: " + dog.);
+					System.out.println(dog.getPetName() + "Cage: " + dog.getPetBoxID());
+				}
+				System.out.println("Which cage would you like to clean? "
+						+ "\n Enter cage id or type 'All' to clean all cages.");
+				String cageID = userInput.nextLine();
+				if (response.toLowerCase().equals("all")) {
+					petShelter.cleanAllCages();
+				} else {
+					// TODO validate user response to a number
+					petShelter.cleanCage(cageID);
 				}
 				
 				

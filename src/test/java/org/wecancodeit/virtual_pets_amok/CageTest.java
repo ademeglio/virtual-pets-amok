@@ -11,7 +11,7 @@ public class CageTest {
 	
 	@Before
 	public void setUp() {
-		cageTest = new Cage();
+		cageTest = new Cage(1);
 		
 	}
 	
