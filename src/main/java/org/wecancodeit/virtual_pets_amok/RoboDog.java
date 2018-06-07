@@ -15,6 +15,6 @@ public class RoboDog extends RoboPet implements DogInterface {
 	// Methods
 	@Override
 	public void takeForWalk() {
-		petHappiness += 1; 
+		petHappiness += 2; 
 	}
 }

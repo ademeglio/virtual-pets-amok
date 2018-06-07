@@ -1,6 +1,6 @@
 package org.wecancodeit.virtual_pets_amok;
 
-import java.io.IOException;
+
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
@@ -150,7 +150,7 @@ public class VirtualPetShelterApp {
 				// gather all the dogs and list them along with cageID as options to clean
 				Collection<Dog> dogs = petShelter.getAllShelterDogs();
 				for (Dog dog : dogs) {
-					System.out.println(dog.getPetName() + "Cage: " + dog.getPetBoxID());
+					System.out.println(dog.getPetName() + "'s Cage: " + dog.getPetBoxID());
 				}
 				boolean continueClean = true;
 				while (continueClean) {
@@ -159,6 +159,7 @@ public class VirtualPetShelterApp {
 					response = userInput.nextLine();
 					if (response.toLowerCase().equals("all")) { // Cleans all cages
 						petShelter.cleanAllCages();
+						break;
 					} else if (response.toLowerCase().equals("quit") || response.toLowerCase().equals("q") // changed mind about cleaning
 							|| response.toLowerCase().equals("exit")) {
 						break;
@@ -210,31 +211,66 @@ public class VirtualPetShelterApp {
 			case "9": // Admit a pet
 				System.out.println("Please select the type of animal to admit... ");
 				System.out.println("1. Cat\t\t3. RoboCat"
-								+  "2. Dog\t\t4. RoboDog");
+								+ "\n2. Dog\t\t4. RoboDog");
 				String newPetType = userInput.nextLine();
 				String newPetName = asker.verifyString("Please choose a name for our new guest...");
-				String newPetDescription = asker.verifyString("Please give a brief description of our new guest...");
+				System.out.println("Please give a brief description of our new guest...");
+				String newPetDescription = userInput.nextLine();
+				
+				VirtualPet newPet;
+				Cage newCage;
 				
 				// How to create the pet depends on the pet type
-				switch (newPetType) {
+				switch (newPetType.toLowerCase()) {
+				case "1": // Cat
+					newPet = new Cat(newPetName, newPetDescription);
+					litterBox.addPet(newPet);
+					break;
 				
-				}
-//				petShelter.addPet(new VirtualPet.Builder().name(newPetName).description(newPetDescription).build());
-//				System.out.println(petShelter.findPet(newPetName).getPetName() + ", welcome to the family!");
+				case "2": // Dog
+					newPet = new Dog(newPetName, newPetDescription);
+					newCage = new Cage(shelterCageID++);
+					newCage.addPet(newPet);
+					petShelter.addToShelter(newCage.getBoxID(), newCage);
+					break;
+				
+				case "3": // RoboCat
+					newPet = new RoboCat(newPetName, newPetDescription);
+					litterBox.addPet(newPet);
+					break;
+					
+				case "4": // RoboDog
+					newPet = new RoboDog(newPetName, newPetDescription);
+					newCage = new Cage(shelterCageID++);
+					newCage.addPet(newPet);
+					petShelter.addToShelter(newCage.getBoxID(), newCage);
+					break;
+				
+				case "quit": // stop admit a pet
+					break;
+				
+				default:
+					System.out.println("Please select from the list or type \"Quit\".");
+					
+				} // End Switch
+				
+
+				System.out.println(newPetName + ", welcome to the family!");
 
 				break;				
 
 			case "10": // Quit
 				userInput.close();
+				System.out.println("Thank you for helping out " + userName + "!");
 				System.exit(0);
-				
+				break;
 			default :
 				System.out.println("Please make a valid selection (1 - 6)");
 			} // End switch
 			
 			// Tick
 			petShelter.runAllTicks();
-			break;
+			
 		}  // End Game Loop
 		
 

@@ -35,15 +35,17 @@ public class OrganicPet extends VirtualPet{
 
 	// methods
 	public void feedPet() {
-		hungerLevel -= hungerLevel;
+		hungerLevel -=2;
 		thirstLevel ++;
 		wasteLevel += 2;
+		petHappiness ++;
 	}
 	
 
 	public void waterPet() {
 		thirstLevel -= thirstLevel;
 		wasteLevel += 2;
+		petHappiness ++;
 	}
 
 	

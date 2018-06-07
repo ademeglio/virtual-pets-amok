@@ -22,7 +22,7 @@ public class RoboPet extends VirtualPet{
 
 	// Methods
 	public void oilPet() {
-		petRustLevel --;
+		petRustLevel -=2;
 		petHappiness ++;
 		petHealth ++;
 	}
@@ -36,11 +36,13 @@ public class RoboPet extends VirtualPet{
 		// If rust level reaches max, pet dies
 		if (petRustLevel >= 10) {
 			// pet dies
+			petHealth = 0;
 		}
 		
 		// If petHappiness reaches min, pet dies
 		if (petHappiness <= 0) {
-			// pet dies			
+			// pet dies	
+			petHealth = 0;
 		}
 		
 	}

@@ -317,4 +317,28 @@ public class PetShelterTest {
 		//Assert
 		assertEquals(happinessStart + 1, 6);
 	}
+	
+	@Test
+	public void shouldAdoptPetSpecifiedByName() {
+		// Setup
+		Cat cat1 = new Cat("Bytes");
+		Dog dog1 = new Dog("Copper");
+		RoboCat roboCat2 = new RoboCat("Javi");
+		RoboDog roboDog2 = new RoboDog("Trixie");
+		Cage cage1 = new Cage(1);
+		Cage cage2 = new Cage(2);
+		LitterBox litterBox = new LitterBox(3);
+		cage1.addPet(roboDog2);
+		cage2.addPet(dog1);
+		litterBox.addPet(roboCat2);
+		litterBox.addPet(cat1);
+		testShelter.addToShelter(1, cage1);
+		testShelter.addToShelter(2, cage2);
+		testShelter.addToShelter(3, litterBox);
+		// Action
+		testShelter.adoptPet("Trixie");
+		//Assert
+		
+		assertThat(testShelter.getAllPets(), not(containsInAnyOrder(roboDog2)));	
+	}
 }

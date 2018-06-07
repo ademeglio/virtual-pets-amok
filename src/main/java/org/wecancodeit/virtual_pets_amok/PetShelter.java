@@ -211,9 +211,10 @@ public class PetShelter {
 		// Action
 		int cageID = petMap.get(petName).getPetBoxID();
 		petBoxes.get(cageID).removePet(petMap.get(petName));
-		
 	}
 	
+	
+
 	
 	
 	

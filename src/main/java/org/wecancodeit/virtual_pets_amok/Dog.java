@@ -28,13 +28,15 @@ public class Dog extends OrganicPet implements DogInterface {
 		//If Hunger reaches max, pet dies
 		if (hungerLevel >= 10) {
 			// pet dies
+			petHealth = 0;
 		}
 		//If petHappiness reaches min, pet dies
-		if (petHappiness <= 0) {
+		if (petHappiness < 0) {
 			// pet dies
+			petHealth = 0;
 		}
 		//If Waste reaches a max value, empty and fill the cage
-		if (wasteLevel >= 8) {
+		if (wasteLevel >= 6) {
 			// set WasteLevel to 0 and then dirty the cage)
 			petBox.makePetBoxDirty(wasteLevel);
 			wasteLevel -= wasteLevel;

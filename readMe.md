@@ -1,21 +1,21 @@
 # My Build Notes
   * Working with Siddiqa!
 
-[X] 1. Add cages and litter box to the shelter
-[X] 2. Add pets to those cages or litter box (PetBox). Need to be able to assign the pet to a particular cage or litterbox.
+* [X] 1. Add cages and litter box to the shelter
+* [X] 2. Add pets to those cages or litter box (PetBox). Need to be able to assign the pet to a particular cage or litterbox.
       * _Aaron helped guide me to a way to link the PetBox with the pet by using the PetBox object as a field in VirtualPet()_
 
-[X] The tick should 
+* [X] The tick should 
   * increment hunger over time as well as decrease happiness. 
   * Then as hunger subsides, thirst increases along with waste.
   * Once waste reaches a certain level, it drops down which means the cage/litterbox is dirty. _Unless you walked the dog before you reach that level_.
   * As play increases, thirst and tired increases.
   * Robots don't get hungry, but they get bored and if they get bored they start to rust.
 
-[ ] petDeathI() if the pet dies, ~then it should be removed from the cage. You would have to be able to list a cage as empty or remove it from the shelter.~
+* [x] petDeathI() if the pet dies, ~then it should be removed from the cage. You would have to be able to list a cage as empty or remove it from the shelter.~
 _On second thought, I thought it might be fun to just list the status as Dead... which means it may come back to life. Ever watch pet cemetery?_
 
-[x] Use a comparable! When the pets are introduced, I sort the pets by name. I had to implement a Comparable in VirtualPet to make that work. _This only works during the introduction because of how I ended showing the status of the pets. I broke it into two parts, organic & robotic_.
+* [x] Used a comparable! When the pets are introduced, I sort the pets by name. I had to implement a Comparable in VirtualPet to make that work. _This only works during the introduction because of how I ended showing the status of the pets. I broke it into two parts, organic & robotic_.
 
 # Virtual Pets AMOK!
 Oh noes! Your virtual pet shelter has become a mess!
@@ -75,10 +75,10 @@ In addition to the last project’s requirements:
 In addition to the last project’s requirements:
 
 * add options to:
-  * [ ] walk all dogs
-  * [ ] clean dog cages
-  * [ ] clean the shelter litterbox
-  * [ ] oil all robotic pets
+  * [x] walk all dogs
+  * [x] clean dog cages
+  * [x] clean the shelter litterbox
+  * [x] oil all robotic pets
 
 ## Tips
   * Remember: don’t get caught up in the user interface at first. Focus on shelter/pet behavior. Try to get one thing working at a time.
@@ -89,8 +89,8 @@ Here is the [rubric](https://wecancodeit.github.io/java-exercises/virtual-pets-a
 
 ## Stretch Tasks
   * [ ] Allow for other types of pets. Are they caged? What maintenance do they require?
-  * Allow an option for giving treats to pets. What sorts of treats do different pets like?
-  * introduce a `Cage` class for each dog, where cleanliness is tracked, keying these on the dog to which each is assigned (to use a `VirtualPet` as a key in a `HashMap`, you should implement `hashCode` and `equals`)
-  * Herd your cats.
+  * [ ] Allow an option for giving treats to pets. What sorts of treats do different pets like?
+  * [x] introduce a `Cage` class for each dog, where cleanliness is tracked, keying these on the dog to which each is assigned (to use a `VirtualPet` as a key in a `HashMap`, you should implement `hashCode` and `equals`)
+  * [ ] Herd your cats.
 
 _(Note: the author is aware that it would not be a wise decision to allow all cats in a shelter to share a litterbox. They’re virtual pets, so virtually disease-free.)_

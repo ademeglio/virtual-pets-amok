@@ -23,13 +23,15 @@ public class Cat extends OrganicPet {
 		//If Hunger reaches Max, pet dies
 		if (hungerLevel >= 10) {
 			// pet dies
+			petHealth = 0;
 		}
 		//If petHappiness reaches Min, pet dies
-		if (petHappiness <= 0) {
+		if (petHappiness < 0) {
 			// pet dies
+			petHealth = 0;
 		}
 		//If Waste reaches a max value, empty and fill the litter box
-		if (wasteLevel >= 8) {
+		if (wasteLevel >= 6) {
 			// set WasteLevel to 0 and then dirty the litter box)
 			petBox.makePetBoxDirty(wasteLevel);
 			wasteLevel -= wasteLevel;
