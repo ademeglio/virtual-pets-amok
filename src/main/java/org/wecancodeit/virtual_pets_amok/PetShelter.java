@@ -130,29 +130,45 @@ public class PetShelter {
 	
 	// iterate through pets display current status
 	public void allPetStatus() {
-		// setup list of pets and sort by petName
-		ArrayList<VirtualPet> pets = new ArrayList<VirtualPet>();
+		// setup list of organic pets
+		ArrayList<OrganicPet> organicPets = new ArrayList<OrganicPet>();
 		for (PetBox petBox : petBoxes.values()) {
-			pets.addAll(petBox.getAllPets());
+			organicPets.addAll(petBox.getAllOrganicPets());
 		}
-		Collections.sort(pets);
+		// setup list of robotic pets
+		ArrayList<RoboPet> roboPets = new ArrayList<RoboPet>();
+		for (PetBox petBox : petBoxes.values()) {
+			roboPets.addAll(petBox.getAllRobotPets());
+		}
 		
 		// column headers
-		System.out.println("\t\t| HAPPY\t|HEALTH\t|HUNGER\t|THIRST\t|WASTE\t|RUST");
-		System.out.println("TYPE\t|NAME\t| LEVEL\t|LEVEL\t|LEVEL\t|LEVEL\t|LEVEL\t|LEVEL");
+		System.out.println("\t\t| HAPPY\t|HEALTH\t|HUNGER\t|THIRST\t|CAGE/LB|RUST");
+		System.out.println("TYPE\t|NAME\t| LEVEL\t|LEVEL\t|LEVEL\t|LEVEL\t|DIRTY\t|LEVEL");
 		System.out.println("--------|-------|-------|-------|-------|-------|-------|------");
 		
-		// Pet List
-		for (VirtualPet pet : pets) {
+		// Organic Pet List
+		for (OrganicPet pet : organicPets) {
+			System.out.println(
+					  pet.getClass().getSimpleName() + "\t|"
+					+ pet.getPetName() + "\t|  "
+					+ pet.getHappiness() + "\t|  "
+					+ pet.getHealthStatus() + "\t|  "
+					+ pet.getHungerLevel() + "\t|  "
+					+ pet.getThirstLevel() + "\t|  "
+					+ pet.petBox.isBoxClean() + "\t|  "
+					+ "n/a");	
+		}
+		// Robotic Pet List
+		for (RoboPet pet : roboPets) {
 			System.out.println(
 					  pet.getClass().getSimpleName() + "\t|"
 					+ pet.getPetName() + "\t|  "
 					+ pet.getHappiness() + "\t|  "
 					+ pet.getHealth() + "\t|  "
-					+ "X" + "\t|  "
-					+ "X" + "\t|  "
-					+ "X" + "\t|  "
-					+ "X");	
+					+ "n/a" + "\t|  "
+					+ "n/a" + "\t|  "
+					+ pet.petBox.isBoxClean() + "\t|  "
+					+ pet.getPetRustLevel());	
 		}
 		System.out.println("---------------------------------------------------------------");
 	}

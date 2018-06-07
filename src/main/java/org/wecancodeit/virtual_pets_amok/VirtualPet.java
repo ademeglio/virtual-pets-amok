@@ -31,6 +31,15 @@ public class VirtualPet implements Comparable<VirtualPet>{
 	public int getHealth() {
 		return petHealth;
 	}
+	
+	public String getHealthStatus() { // used for pet status
+		String petHealthStatus;
+		if (petHealth == 0) {
+			petHealthStatus = "DEAD";
+		} else
+			petHealthStatus =  Integer.toString(petHealth);
+		return petHealthStatus;
+	}
 
 	public int getHappiness() {
 		return petHappiness;

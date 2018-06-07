@@ -74,5 +74,11 @@ public class PetBox {
 		pet.unAssignBox();
 	}
 
+	public String isBoxClean() {
+		if (dirtLevel > 0) {
+			return "Y";
+		} else
+			return "N";
+	}
 
 }  // End PetBox()

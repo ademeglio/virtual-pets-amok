@@ -1,6 +1,6 @@
 package org.wecancodeit.virtual_pets_amok;
 
-public class RoboDog extends RoboPet implements DogInterface{
+public class RoboDog extends RoboPet implements DogInterface {
 
 	// Constructors
 	public RoboDog(String petName) {
