@@ -6,10 +6,11 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class PetBox {
-
-	Map<String, VirtualPet> pets = new HashMap<String, VirtualPet>();
-	private int dirtLevel = 0;
+	// Instance Variables
 	private int boxID;
+	private int dirtLevel = 0;
+	
+	Map<String, VirtualPet> pets = new HashMap<String, VirtualPet>();
 	
 	// Constructor
 	public PetBox(int boxID) {

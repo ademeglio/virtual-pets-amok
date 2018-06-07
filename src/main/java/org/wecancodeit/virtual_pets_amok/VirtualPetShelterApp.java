@@ -1,5 +1,6 @@
 package org.wecancodeit.virtual_pets_amok;
 
+import java.io.IOException;
 import java.util.Collection;
 import java.util.Scanner;
 
@@ -125,20 +126,35 @@ public class VirtualPetShelterApp {
 				break;
 				
 			case "5" : // Clean the dog cages
+				// gather all the dogs and list them along with cageID as options to clean
 				Collection<Dog> dogs = petShelter.getAllShelterDogs();
 				for (Dog dog : dogs) {
 					System.out.println(dog.getPetName() + "Cage: " + dog.getPetBoxID());
 				}
-				System.out.println("Which cage would you like to clean? "
-						+ "\n Enter cage id or type 'All' to clean all cages.");
-				String cageID = userInput.nextLine();
-				if (response.toLowerCase().equals("all")) {
-					petShelter.cleanAllCages();
-				} else {
-					// TODO validate user response to a number
-					petShelter.cleanCage(cageID);
-				}
-				
+				boolean continueClean = true;
+				while (continueClean) {
+					System.out.println("Which cage would you like to clean? "
+							+ "\n Enter cage id or type 'All' to clean all cages.");
+					response = userInput.nextLine();
+					if (response.toLowerCase().equals("all")) { // Cleans all cages
+						petShelter.cleanAllCages();
+					} else if (response.toLowerCase().equals("quit") || response.toLowerCase().equals("q") // changed mind about cleaning
+							|| response.toLowerCase().equals("exit")) {
+						break;
+					} else {
+						// try response and it throws an error, start again.
+						try {
+							int cageID = Integer.parseInt(response); 
+							petShelter.cleanCage(cageID);	
+							break;
+						} catch (IOException e){
+							System.out.println("Please enter a valid selection.");
+							continue;
+						} // end catch
+							
+					} // end else
+				} // end while loop
+			
 				
 				
 				

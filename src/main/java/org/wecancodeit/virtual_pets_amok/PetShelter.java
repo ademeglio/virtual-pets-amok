@@ -49,7 +49,7 @@ public class PetShelter {
 	
 	// Methods
 	public void addToShelter(int cageNum, PetBox petBox) {
-		petBoxes.put(cageNum, petBox);
+		petBoxes.put(petBox.getBoxID(), petBox);
 	}
 
 	public void removeFromShelter(int cageNum) {
@@ -188,9 +188,8 @@ public class PetShelter {
 		System.out.println("---------------------------------------------------------------");
 	}
 
-	public void cleanCage(String cageID) {
-		PetBox cleanCage = petBoxes.get(cageID);
-		cleanCage.scrubPetBox();
+	public void cleanCage(int cageID) {
+		petBoxes.get(cageID).scrubPetBox();
 	}
 
 

@@ -287,14 +287,14 @@ public class PetShelterTest {
 		Cage cage1 = new Cage(1);
 		Cage cage2 = new Cage(2);
 		LitterBox litterBox = new LitterBox(3);
-		testShelter.addToShelter(1, cage1);
-		testShelter.addToShelter(2, cage2);
-		testShelter.addToShelter(3, litterBox);
+		testShelter.addToShelter(cage1.getBoxID(), cage1);
+		testShelter.addToShelter(cage2.getBoxID(), cage2);
+		testShelter.addToShelter(litterBox.getBoxID(), litterBox);
 		cage1.makePetBoxDirty(8);
 		cage2.makePetBoxDirty(9);
 		litterBox.makePetBoxDirty(13);
 		//Action
-		testShelter.cleanCage("1");
+		testShelter.cleanCage(1);
 		int dirtLevel1 = cage1.getCleanliness();
 		int dirtLevel2 = cage2.getCleanliness();
 		int dirtLevel3 = litterBox.getCleanliness();
