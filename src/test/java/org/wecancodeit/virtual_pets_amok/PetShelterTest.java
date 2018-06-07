@@ -303,4 +303,18 @@ public class PetShelterTest {
 		assertEquals(dirtLevel2, 9);
 		assertEquals(dirtLevel3, 13);
 	}
+	
+	@Test
+	public void PlayShouldIncreaseHappinessBy1() {
+		//setup
+		Cat cat1 = new Cat("Bytes");
+		Cage cage1 = new Cage(1);
+		cage1.addPet(cat1);
+		testShelter.addToShelter(cage1.getBoxID(), cage1);
+		// Act
+		int happinessStart = cat1.getHappiness();
+		testShelter.playWith(cat1.getPetName());
+		//Assert
+		assertEquals(happinessStart + 1, 6);
+	}
 }

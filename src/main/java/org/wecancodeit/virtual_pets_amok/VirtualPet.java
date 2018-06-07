@@ -69,6 +69,10 @@ public class VirtualPet implements Comparable<VirtualPet>{
 		// To be overridden by sub classes
 	}
 	
+	public void play() {
+		petHappiness ++;
+	}
+	
 
 
 } // End VirtualPet()

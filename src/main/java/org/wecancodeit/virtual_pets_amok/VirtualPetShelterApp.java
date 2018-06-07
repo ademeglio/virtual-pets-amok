@@ -2,6 +2,8 @@ package org.wecancodeit.virtual_pets_amok;
 
 import java.io.IOException;
 import java.util.Collection;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Scanner;
 
 
@@ -58,7 +60,11 @@ public class VirtualPetShelterApp {
 		petShelter.addToShelter(cage3.getBoxID(), cage3);
 		petShelter.addToShelter(litterBox.getBoxID(), litterBox);
 		
-		Collection<VirtualPet> petCollection = petShelter.getAllPets();
+		// Map out all pets
+		Map<String, VirtualPet> petCollection = new HashMap<String, VirtualPet>();
+		for(VirtualPet pet : petShelter.getAllPets()) {
+			petCollection.put(pet.getPetName(), pet);
+		}
 		
 // 		Welcome
 		userName = asker.verifyString("Hello, what is your first name?");
@@ -116,10 +122,23 @@ public class VirtualPetShelterApp {
 				break;
 			
 			case "3": // Play with a pet
-				System.out.println("How fun! Who would you like to play with? Please choose one or \"Quit\":");
-				boolean selectionMade = false;
-	// TODO
-				break;
+				
+				while(true) {
+					System.out.println("Awesome! Who would you like to play with? Please choose one or \"Quit\":");
+					petShelter.introducePets();	
+					response = userInput.nextLine();
+					
+					if(response.toLowerCase().equals("quit")) {							// user decides not to play with pet
+						break; 
+					} else if (petShelter.getAllPets().contains(petCollection.get(response))){		// validate user selection
+						petShelter.playWith(response);
+						break;
+					} else {
+						System.out.println("Please enter a valid selection.");
+						continue;
+					}
+						
+				} // End while
 				
 			case "4" : // Walk the dogs
 				petShelter.walkAllDogs();
@@ -147,7 +166,7 @@ public class VirtualPetShelterApp {
 							int cageID = Integer.parseInt(response); 
 							petShelter.cleanCage(cageID);	
 							break;
-						} catch (IOException e){
+						} catch ( NumberFormatException e){
 							System.out.println("Please enter a valid selection.");
 							continue;
 						} // end catch
