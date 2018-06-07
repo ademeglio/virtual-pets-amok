@@ -25,6 +25,7 @@ public class VirtualPetShelterApp {
 		String userName = "";
 		String response = "";
 		boolean yesNo = true;
+		int shelterCageID = 0;
 		
 		Scanner userInput = new Scanner(System.in);
 		QuestionAsker asker = new QuestionAsker(userInput);
@@ -41,10 +42,10 @@ public class VirtualPetShelterApp {
 		RoboCat roboCat1 = new RoboCat("Titan", "is so shiny!");
 		
 		// Add cages/litter box(es) to shelter
-		Cage cage1 = new Cage(1);
-		Cage cage2 = new Cage(2);
-		Cage cage3 = new Cage(3);
-		LitterBox litterBox = new LitterBox(4);
+		Cage cage1 = new Cage(shelterCageID++);
+		Cage cage2 = new Cage(shelterCageID++);
+		Cage cage3 = new Cage(shelterCageID++);
+		LitterBox litterBox = new LitterBox(shelterCageID++);
 		
 		// Assign the pets to cages or litter box
 		cage1.addPet(dog1);
@@ -124,7 +125,7 @@ public class VirtualPetShelterApp {
 			case "3": // Play with a pet
 				
 				while(true) {
-					System.out.println("Awesome! Who would you like to play with? Please choose one or \"Quit\":");
+					System.out.println("Awesome! Who would you like to play with? Type their name or \"Quit\" to cancel:");
 					petShelter.introducePets();	
 					response = userInput.nextLine();
 					
@@ -139,6 +140,7 @@ public class VirtualPetShelterApp {
 					}
 						
 				} // End while
+				break;
 				
 			case "4" : // Walk the dogs
 				petShelter.walkAllDogs();
@@ -173,49 +175,54 @@ public class VirtualPetShelterApp {
 							
 					} // end else
 				} // end while loop
-			
+				break;
 				
+			case "6": // clean the litter box(es)	
+				petShelter.cleanAllLitterBoxes();
+				break;
 				
-				
-				
-				
-				
-				
-				
+			case "7": //oil all RoboPets
+				petShelter.oilAllRobots();
+				break;
+
 				
 			case "8": // Adopt a pet
-//				System.out.println("We knew you couldn't resist! Who would you like to adopt? Type their name or quit to cancel");
-//				selectionMade = false;
-//				while (!selectionMade) {
-//					for (VirtualPet pet : petCollection) {
-//						System.out.println("[" + pet.getPetName() + "] " + pet.getPetDescription() );
-//					}
-//					response = userInput.nextLine();
-//					
-//					VirtualPet currentPet = petShelter.findPet(response);
-//					
-//					if (petCollection.contains(currentPet)) {
-//						petShelter.adoptPet(petShelter.findPet(response));
-//						System.out.println("I think " + currentPet.getPetName() + " and you will have a happy life!");
-//						selectionMade = true;
-//					} else if (response.toLowerCase().equals("quit")){
-//						break;
-//					} else {
-//						System.out.println("Please pick a name from the list or 'quit'. Thank you.");
-//					}
+				System.out.println("We knew you couldn't resist! Who would you like to adopt? Type their name or \"Quit\" to cancel");
+				boolean selectionMade = false;
+				while (!selectionMade) {
+					petShelter.introducePets();
+					response = userInput.nextLine();
 					
-//				} // end adopt a pet 
+					if(response.toLowerCase().equals("quit")) {
+						break;
+					} else if (petShelter.getAllPets().contains(petCollection.get(response))) {
+						System.out.println("I think " + petCollection.get(response).getPetName() + " and you will have a happy life!");
+						petShelter.adoptPet(response);
+						selectionMade = true;
+						break;
+					} else {
+						System.out.println("Please pick a name from the list or 'quit'. Thank you.");
+					}
+					
+				} // end adopt a pet 
 				break;				
 				
 			case "9": // Admit a pet
-//				System.out.println("Please choose a name for our new guest...");
-//				String newPetName = userInput.nextLine();
-//				System.out.println("Please give a brief description of our new guest...");
-//				String newPetDescription = userInput.nextLine();
+				System.out.println("Please select the type of animal to admit... ");
+				System.out.println("1. Cat\t\t3. RoboCat"
+								+  "2. Dog\t\t4. RoboDog");
+				String newPetType = userInput.nextLine();
+				String newPetName = asker.verifyString("Please choose a name for our new guest...");
+				String newPetDescription = asker.verifyString("Please give a brief description of our new guest...");
+				
+				// How to create the pet depends on the pet type
+				switch (newPetType) {
+				
+				}
 //				petShelter.addPet(new VirtualPet.Builder().name(newPetName).description(newPetDescription).build());
 //				System.out.println(petShelter.findPet(newPetName).getPetName() + ", welcome to the family!");
-//
-//				break;				
+
+				break;				
 
 			case "10": // Quit
 				userInput.close();

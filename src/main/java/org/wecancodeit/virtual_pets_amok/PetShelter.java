@@ -201,6 +201,20 @@ public class PetShelter {
 		// Action
 		petMap.get(petName).play();
 	}
+
+	public void adoptPet(String petName) {
+		Map<String, VirtualPet> petMap = new HashMap<String, VirtualPet>();
+		// Setup: add existing pets to map
+		for(VirtualPet pet : getAllPets()) {
+			petMap.put(pet.getPetName(), pet);
+		}
+		// Action
+		int cageID = petMap.get(petName).getPetBoxID();
+		petBoxes.get(cageID).removePet(petMap.get(petName));
+		
+	}
+	
+	
 	
 	
 
