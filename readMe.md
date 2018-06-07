@@ -1,8 +1,10 @@
 # My Build Notes
   * Working with Siddiqa!
+
 [X] 1. Add cages and litter box to the shelter
 [X] 2. Add pets to those cages or litter box (PetBox). Need to be able to assign the pet to a particular cage or litterbox.
       * _Aaron helped guide me to a way to link the PetBox with the pet by using the PetBox object as a field in VirtualPet()_
+
 [X] The tick should 
   * increment hunger over time as well as decrease happiness. 
   * Then as hunger subsides, thirst increases along with waste.
@@ -10,9 +12,10 @@
   * As play increases, thirst and tired increases.
   * Robots don't get hungry, but they get bored and if they get bored they start to rust.
 
-[ ] petDeathI() if the pet dies, then it should be removed from the cage. You would have to be able to list a cage as empty or remove it from the shelter.
+[ ] petDeathI() if the pet dies, ~then it should be removed from the cage. You would have to be able to list a cage as empty or remove it from the shelter.~
+_On second thought, I thought it might be fun to just list the status as Dead... which means it may come back to life. Ever watch pet cemetery?_
 
-[x] Use a comparable! When the pets are introduced, I sort the pets by name. I had to implement a Comparable in VirtualPet to make that work.
+[x] Use a comparable! When the pets are introduced, I sort the pets by name. I had to implement a Comparable in VirtualPet to make that work. _This only works during the introduction because of how I ended showing the status of the pets. I broke it into two parts, organic & robotic_.
 
 # Virtual Pets AMOK!
 Oh noes! Your virtual pet shelter has become a mess!
