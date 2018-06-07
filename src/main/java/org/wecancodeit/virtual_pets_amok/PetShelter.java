@@ -16,6 +16,13 @@ public class PetShelter {
 		return petBoxes.values();
 	}
 
+	public Collection<VirtualPet> getAllPets() {
+		ArrayList<VirtualPet> pets = new ArrayList<VirtualPet>();
+		for(PetBox petBox : petBoxes.values()) {
+			pets.addAll(petBox.getAllPets());
+		}
+		return pets;
+	}
 	public ArrayList<RoboPet> getAllRoboPets() {
 		ArrayList<RoboPet> roboPets = new ArrayList<RoboPet>();
 		for(PetBox petBox : petBoxes.values()) {
@@ -128,7 +135,7 @@ public class PetShelter {
 		}
 	}
 	
-	// iterate through pets display current status
+	// iterate through pets to display current status
 	public void allPetStatus() {
 		// setup list of organic pets
 		ArrayList<OrganicPet> organicPets = new ArrayList<OrganicPet>();
@@ -172,6 +179,7 @@ public class PetShelter {
 		}
 		System.out.println("---------------------------------------------------------------");
 	}
+
 
 
 
