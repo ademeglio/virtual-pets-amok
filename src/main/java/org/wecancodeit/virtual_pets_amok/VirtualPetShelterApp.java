@@ -18,6 +18,8 @@ public class VirtualPetShelterApp {
 	public static void main(String[] args) {
 		
 		String userName = "";
+		String response = "";
+		boolean yesNo = true;
 		
 		Scanner userInput = new Scanner(System.in);
 		QuestionAsker asker = new QuestionAsker(userInput);
@@ -56,22 +58,42 @@ public class VirtualPetShelterApp {
 // 		Welcome
 		userName = asker.verifyString("Hello, what is your first name?");
 		
-		System.out.println("Welcome " + userName + " to the AJ DeMeglio Pet Shelter."
-				+ "\nThank you for volunteering!"
+		System.out.println("\nWelcome " + userName + " to the AJD Animal Rescue Shelter."
+				+ " Thank you for volunteering!"
 				+ "\nAll we ask is that you care for our pets by simply keeping the"
-				+ "\nthe animals happy by feeding, walking (where appropriate!),"
-				+ "\nplaying with them and keeping their cages and litter box tidy"
-				
-				+ "\n\nLet me introduce you to our pets...\n");
+				+ " the animals happy\nby feeding, walking (where appropriate!),"
+				+ " playing with them and keeping their cages and\nlitter box tidy\n");
+			
+		// opportunity to exit the game or be introduced to current pet list to start
+		yesNo = asker.yesOrNo("Would you like to meet the animals (Y or N)?");
+		if (yesNo) {
+			System.out.println(userName + ", let me introduce you to our pets...");
+			petShelter.introducePets();			
+		} else {
+			System.out.println("Well, thanks for stopping by, maybe next time!");
+			System.exit(0);
+		}
+		
+		
+		/*
+		 *  The following helps space out text if the console is short and accepts
+		 *  quit or exit to stop the game before you go into the game loop
+		 */
+		System.out.println("\nWhen you are ready to check on the animals, hit enter...");
+		response = userInput.nextLine();
+		if (response.toLowerCase() == "quit" || response.toLowerCase() == "exit") {
+			System.exit(0);
+		}
 		
 //		Game Loop
 		while (true) {
 			// Pet Status
-			
+			petShelter.allPetStatus();
 			// Menu
 			
 			// Tick
-			// TODO : Create a petShelter Tick method that runs each pets tick.
+			break;
+			
 		}  // End Game Loop
 		
 

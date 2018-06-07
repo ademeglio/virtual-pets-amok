@@ -114,6 +114,23 @@ public class PetShelter {
 			pet.tick();
 		}
 	}
+	
+	// Iterate through pets for introductions.
+	public void introducePets() {
+		ArrayList<VirtualPet> pets = new ArrayList<VirtualPet>();
+		for (PetBox petBox : petBoxes.values()) {
+			pets.addAll(petBox.getAllPets());
+		}
+		for (VirtualPet pet : pets) {
+			System.out.println("\t" + pet.getPetName() + ", " + pet.getPetDescription());
+		}
+	}
+	
+	// iterate through pets display current status
+	public void allPetStatus() {
+		System.out.println("\t\t|HUNGER\t|THIRST\t|HAPPY\t|WASTE| HEALTH\t| RUST");
+		System.out.println("TYPE\t|NAME\t|LEVEL\t|LEVEL\t|LEVEL\t|LEVEL|  LEVEL\t| LEVEL");
+	}
 
 
 

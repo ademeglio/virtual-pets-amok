@@ -58,7 +58,7 @@ public class OrganicDogTest {
 		int dogHappinessStart = testDog.getHappiness();
 		int dogThirstStart = testDog.getThirstLevel();
 		// Act
-		testDog.tick(testCage);
+		testDog.tick();
 		// Assert
 		assertEquals(dogHungerStart + 1, 2);
 		assertEquals(dogHappinessStart -1, 4);

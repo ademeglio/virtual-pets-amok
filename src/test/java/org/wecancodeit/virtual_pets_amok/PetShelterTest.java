@@ -247,7 +247,6 @@ public class PetShelterTest {
 		assertEquals(catWasteStart, 1);
 	}
 	
-	// TODO
 	@Test
 	public void shouldRunAllPetTicks() {
 		// Setup

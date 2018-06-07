@@ -105,7 +105,7 @@ public class OrganicCatTest {
 		int catHappinessStart = testCat.getHappiness();
 		int catThirstStart = testCat.getThirstLevel();
 		// Act
-		testCat.tick(petBox);
+		testCat.tick();
 		// Assert
 		assertEquals(catHungerStart + 1, 2);
 		assertEquals(catHappinessStart -1, 4);
