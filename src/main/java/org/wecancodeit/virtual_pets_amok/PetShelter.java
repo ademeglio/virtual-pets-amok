@@ -130,13 +130,31 @@ public class PetShelter {
 	
 	// iterate through pets display current status
 	public void allPetStatus() {
+		// setup list of pets and sort by petName
+		ArrayList<VirtualPet> pets = new ArrayList<VirtualPet>();
+		for (PetBox petBox : petBoxes.values()) {
+			pets.addAll(petBox.getAllPets());
+		}
+		Collections.sort(pets);
 		
+		// column headers
+		System.out.println("\t\t| HAPPY\t|HEALTH\t|HUNGER\t|THIRST\t|WASTE\t|RUST");
+		System.out.println("TYPE\t|NAME\t| LEVEL\t|LEVEL\t|LEVEL\t|LEVEL\t|LEVEL\t|LEVEL");
+		System.out.println("--------|-------|-------|-------|-------|-------|-------|------");
 		
-		
-		
-		System.out.println("\t\t|HUNGER\t|THIRST\t|HAPPY\t|WASTE| HEALTH\t| RUST");
-		System.out.println("TYPE\t|NAME\t|LEVEL\t|LEVEL\t|LEVEL\t|LEVEL|  LEVEL\t| LEVEL");
-		System.out.println("");
+		// Pet List
+		for (VirtualPet pet : pets) {
+			System.out.println(
+					  pet.getClass().getSimpleName() + "\t|"
+					+ pet.getPetName() + "\t|  "
+					+ pet.getHappiness() + "\t|  "
+					+ pet.getHealth() + "\t|  "
+					+ "X" + "\t|  "
+					+ "X" + "\t|  "
+					+ "X" + "\t|  "
+					+ "X");	
+		}
+		System.out.println("---------------------------------------------------------------");
 	}
 
 
