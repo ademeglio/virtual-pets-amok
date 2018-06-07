@@ -22,9 +22,9 @@ public class PetShelterTest {
 	
 	@Test
 	public void shouldAddCageToShelter() {
-		Cage cage1 = new Cage();
+		Cage cage1 = new Cage(1);
 		// Action
-		testShelter.addToShelter(1, cage1);
+		testShelter.addToShelter(cage1.getBoxID(), cage1);
 		Collection<PetBox> cages = testShelter.getAllCagesAndBoxes();
 		// Assert
 		assertThat(cages, contains(cage1));
@@ -32,9 +32,9 @@ public class PetShelterTest {
 	
 	@Test
 	public void shouldAddLitterBoxToShelter() {
-		LitterBox litter1 = new LitterBox();
+		LitterBox litter1 = new LitterBox(1);
 		// Action
-		testShelter.addToShelter(1, litter1);
+		testShelter.addToShelter(litter1.getBoxID(), litter1);
 		Collection<PetBox> litterB	= testShelter.getAllCagesAndBoxes();
 		// Assert
 		assertThat(litterB, contains(litter1));
@@ -42,9 +42,9 @@ public class PetShelterTest {
 	
 	@Test
 	public void shouldAddLitterBoxAndTwoCagesToShelter() {
-		Cage cage1 = new Cage();
-		Cage cage2 = new Cage();
-		LitterBox litter1 = new LitterBox();
+		Cage cage1 = new Cage(1);
+		Cage cage2 = new Cage(2);
+		LitterBox litter1 = new LitterBox(3);
 		// Action
 		testShelter.addToShelter(1, litter1);
 		testShelter.addToShelter(2, cage2);
@@ -55,9 +55,9 @@ public class PetShelterTest {
 	@Test
 	public void shouldRemoveABoxFromShelterLeavingUsWith2After3WereAdded() {
 		// Setup
-		Cage cage1 = new Cage();
-		Cage cage2 = new Cage();
-		LitterBox litter1 = new LitterBox();
+		Cage cage1 = new Cage(1);
+		Cage cage2 = new Cage(2);
+		LitterBox litter1 = new LitterBox(3);
 		// Action
 		testShelter.addToShelter(1, litter1);
 		testShelter.addToShelter(2, cage2);
@@ -74,9 +74,9 @@ public class PetShelterTest {
 		Dog dog1 = new Dog("Copper");
 		RoboCat roboCat2 = new RoboCat("Javi");
 		RoboDog roboDog2 = new RoboDog("Trixie");
-		Cage cage1 = new Cage();
-		Cage cage2 = new Cage();
-		LitterBox litterBox = new LitterBox();
+		Cage cage1 = new Cage(1);
+		Cage cage2 = new Cage(2);
+		LitterBox litterBox = new LitterBox(3);
 		
 		//Act
 		cage1.addPet(dog1);
@@ -97,7 +97,7 @@ public class PetShelterTest {
 	public void shouldOilAllRobotPetsRustLevelTo0() {
 		//Setup
 		RoboDog roboDog2 = new RoboDog("Trixie");
-		Cage cage1 = new Cage();
+		Cage cage1 = new Cage(1);
 		cage1.addPet(roboDog2);
 		testShelter.addToShelter(1, cage1);
 		// Action
@@ -109,9 +109,9 @@ public class PetShelterTest {
 	@Test
 	public void shouldCleanAllDogCages() {
 		//Setup
-		Cage cage1 = new Cage();
-		Cage cage2 = new Cage();
-		LitterBox litterBox = new LitterBox();
+		Cage cage1 = new Cage(1);
+		Cage cage2 = new Cage(2);
+		LitterBox litterBox = new LitterBox(3);
 		testShelter.addToShelter(1, cage1);
 		testShelter.addToShelter(2, cage2);
 		testShelter.addToShelter(3, litterBox);
@@ -132,9 +132,9 @@ public class PetShelterTest {
 	@Test
 	public void shouldEmptyAllLitterBoxes() {
 		//Setup
-		Cage cage1 = new Cage();
-		Cage cage2 = new Cage();
-		LitterBox litterBox = new LitterBox();
+		Cage cage1 = new Cage(1);
+		Cage cage2 = new Cage(2);
+		LitterBox litterBox = new LitterBox(3);
 		testShelter.addToShelter(1, cage1);
 		testShelter.addToShelter(2, cage2);
 		testShelter.addToShelter(3, litterBox);
@@ -159,9 +159,9 @@ public class PetShelterTest {
 		Dog dog1 = new Dog("Copper");
 		RoboCat roboCat2 = new RoboCat("Javi");
 		RoboDog roboDog2 = new RoboDog("Trixie");
-		Cage cage1 = new Cage();
-		Cage cage2 = new Cage();
-		LitterBox litterBox = new LitterBox();
+		Cage cage1 = new Cage(1);
+		Cage cage2 = new Cage(2);
+		LitterBox litterBox = new LitterBox(3);
 		
 		//Act
 		cage1.addPet(dog1);
@@ -183,8 +183,8 @@ public class PetShelterTest {
 		//Setup
 		Cat cat1 = new Cat("Bytes");
 		Dog dog1 = new Dog("Copper");
-		Cage cage1 = new Cage();
-		LitterBox litterBox = new LitterBox();
+		Cage cage1 = new Cage(1);
+		LitterBox litterBox = new LitterBox(3);
 		cage1.addPet(dog1);
 		litterBox.addPet(cat1);
 		testShelter.addToShelter(1, cage1);
@@ -205,8 +205,8 @@ public class PetShelterTest {
 		//Setup
 		Cat cat1 = new Cat("Bytes");
 		Dog dog1 = new Dog("Copper");
-		Cage cage1 = new Cage();
-		LitterBox litterBox = new LitterBox();
+		Cage cage1 = new Cage(1);
+		LitterBox litterBox = new LitterBox(3);
 		cage1.addPet(dog1);
 		litterBox.addPet(cat1);
 		testShelter.addToShelter(1, cage1);
@@ -227,9 +227,9 @@ public class PetShelterTest {
 		Cat cat1 = new Cat("Bytes");
 		Dog dog1 = new Dog("Copper");
 		Dog dog2 = new Dog("Benji");
-		Cage cage1 = new Cage();
-		Cage cage2 = new Cage();
-		LitterBox litterBox = new LitterBox();
+		Cage cage1 = new Cage(1);
+		Cage cage2 = new Cage(2);
+		LitterBox litterBox = new LitterBox(3);
 		cage1.addPet(dog1);
 		cage2.addPet(dog2);
 		litterBox.addPet(cat1);
@@ -254,9 +254,9 @@ public class PetShelterTest {
 		Dog dog1 = new Dog("Copper");
 		RoboCat roboCat2 = new RoboCat("Javi");
 		RoboDog roboDog2 = new RoboDog("Trixie");
-		Cage cage1 = new Cage();
-		Cage cage2 = new Cage();
-		LitterBox litterBox = new LitterBox();
+		Cage cage1 = new Cage(1);
+		Cage cage2 = new Cage(2);
+		LitterBox litterBox = new LitterBox(3);
 		cage1.addPet(roboDog2);
 		cage2.addPet(dog1);
 		litterBox.addPet(roboCat2);

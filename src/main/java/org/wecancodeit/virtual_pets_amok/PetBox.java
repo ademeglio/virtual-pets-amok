@@ -9,13 +9,22 @@ public class PetBox {
 
 	Map<String, VirtualPet> pets = new HashMap<String, VirtualPet>();
 	private int dirtLevel = 0;
+	private int boxID;
 	
+	// Constructor
+	public PetBox(int boxID) {
+		this.boxID = boxID;
+	}
 	
 	// getters
 	public int getSize() {
 		return pets.size();
 	}
 
+	public int getBoxID() {
+		return boxID;
+	}
+	
 	public Collection<VirtualPet> getAllPets() {
 		return pets.values();
 	}

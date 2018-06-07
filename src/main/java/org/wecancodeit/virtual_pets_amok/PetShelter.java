@@ -39,6 +39,14 @@ public class PetShelter {
 		return organicPets;
 	}
 	
+	public ArrayList<Dog> getAllShelterDogs() {
+		ArrayList<Dog> dogs = new ArrayList<Dog>();
+		for(PetBox petBox : petBoxes.values()) {
+			dogs.addAll(petBox.getAllDogs());
+		}
+		return dogs;
+	}
+	
 	// Methods
 	public void addToShelter(int cageNum, PetBox petBox) {
 		petBoxes.put(cageNum, petBox);

@@ -49,6 +49,9 @@ public class VirtualPet implements Comparable<VirtualPet>{
 		return petDescription;
 	}
 	
+	public int getPetBoxID() {
+		return petBox.getBoxID();
+	}
 	// Comparable
 	public int compareTo(VirtualPet s) {
 		return petName.compareTo(s.getPetName());

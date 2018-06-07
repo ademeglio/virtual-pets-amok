@@ -75,10 +75,10 @@ In addition to the last project’s requirements:
 In addition to the last project’s requirements:
 
 * add options to:
-* [ ] walk all dogs
-* [ ] clean dog cages
-* [ ] clean the shelter litterbox
-* [ ] oil all robotic pets
+  * [ ] walk all dogs
+  * [ ] clean dog cages
+  * [ ] clean the shelter litterbox
+  * [ ] oil all robotic pets
 
 ## Tips
   * Remember: don’t get caught up in the user interface at first. Focus on shelter/pet behavior. Try to get one thing working at a time.
