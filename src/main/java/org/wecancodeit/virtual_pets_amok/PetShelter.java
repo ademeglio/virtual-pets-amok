@@ -2,6 +2,7 @@ package org.wecancodeit.virtual_pets_amok;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -121,6 +122,7 @@ public class PetShelter {
 		for (PetBox petBox : petBoxes.values()) {
 			pets.addAll(petBox.getAllPets());
 		}
+		Collections.sort(pets);
 		for (VirtualPet pet : pets) {
 			System.out.println("\t" + pet.getPetName() + ", " + pet.getPetDescription());
 		}
@@ -128,8 +130,13 @@ public class PetShelter {
 	
 	// iterate through pets display current status
 	public void allPetStatus() {
+		
+		
+		
+		
 		System.out.println("\t\t|HUNGER\t|THIRST\t|HAPPY\t|WASTE| HEALTH\t| RUST");
 		System.out.println("TYPE\t|NAME\t|LEVEL\t|LEVEL\t|LEVEL\t|LEVEL|  LEVEL\t| LEVEL");
+		System.out.println("");
 	}
 
 

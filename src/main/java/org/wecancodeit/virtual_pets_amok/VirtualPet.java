@@ -1,6 +1,6 @@
 package org.wecancodeit.virtual_pets_amok;
 
-public class VirtualPet {
+public class VirtualPet implements Comparable<VirtualPet>{
 
 	// Constants
 	private static final int DEFAULT_PET_HEALTH = 10;
@@ -40,6 +40,12 @@ public class VirtualPet {
 		return petDescription;
 	}
 	
+	// Comparable
+	public int compareTo(VirtualPet s) {
+		return petName.compareTo(s.getPetName());
+	}
+	
+	// Methods
 	public void assignBox(PetBox petBox) {
 		this.petBox = petBox;
 	}
