@@ -1,5 +1,5 @@
 # My Build Notes
-  * Working with Siddiqa!
+  * Working with my classmate, Siddiqa! (Pair Programming)
 
 * [X] 1. Add cages and litter box to the shelter
 * [X] 2. Add pets to those cages or litter box (PetBox). Need to be able to assign the pet to a particular cage or litterbox.
